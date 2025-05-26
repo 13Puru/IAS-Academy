@@ -1,0 +1,2735 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJMAL'S IAS Academy - Premier IAS Coaching in Hojai, Assam</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/courses.css" />
+    <link rel="stylesheet" href="/assets/css/videopart.css" />
+    <link rel="stylesheet" href="/assets/css/acheivers.css" />
+    <link rel="stylesheet" href="/assets/css/reviews.css" />
+    <link rel="stylesheet" href="/assets/css/archives.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      :root {
+        --primary-color: #dc3545;
+        --secondary-color: #6c757d;
+        --success-color: #28a745;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        padding-top: 114px;
+      }
+
+      /* Top Contact Bar */
+      .top-contact-bar {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 8px 0;
+        font-size: 14px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1030;
+        width: 100%;
+        transform: translateY(-100%);
+        animation: slideDown 0.8s ease-out forwards;
+      }
+
+      .top-contact-bar .contact-item {
+        margin-right: 30px;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .top-contact-bar .contact-item i {
+        margin-right: 5px;
+      }
+
+      .download-brochure-btn {
+        background-color: #ffc107;
+        color: #000;
+        padding: 5px 15px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 12px;
+        white-space: nowrap;
+        transition: all 0.3s ease;
+      }
+
+      .download-brochure-btn:hover {
+        background-color: #ffb300;
+        color: #000;
+        text-decoration: none;
+      }
+
+      /* Navigation - FIXED VERSION */
+      .navbar {
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 15px 0;
+        position: fixed;
+        top: 34px; /* Keep this for the contact bar */
+        left: 0;
+        right: 0;
+        z-index: 1020;
+        width: 100%;
+        transition: all 0.3s ease; /* Keep transition for smooth scroll effects */
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+        /* Remove: transform: translateY(-100%); */
+        /* Remove: animation: slideDown 0.8s ease-out 0.3s forwards; */
+      }
+
+      .navbar.navbar-hidden {
+        transform: translateY(-100%);
+      }
+
+      .navbar:hover {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+        animation: fadeInUp 1s ease-out 0.6s both;
+        text-decoration: none;
+      }
+
+      .navbar-brand:hover {
+        text-decoration: none;
+      }
+
+      .logo-circle {
+        width: 60px;
+        height: 60px;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        position: relative;
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+
+      .logo-circle:hover {
+        transform: rotate(360deg) scale(1.05);
+      }
+
+      .logo-circle img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      .logo-circle i {
+        color: white;
+        font-size: 24px;
+      }
+
+      .academy-name {
+        color: #333;
+      }
+
+      .academy-name h3 {
+        margin: 0;
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .academy-name p {
+        margin: 0;
+        font-size: 11px;
+        color: var(--secondary-color);
+      }
+
+      .navbar-toggler {
+        border: none;
+        padding: 4px 8px;
+        font-size: 1.25rem;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+
+      .navbar-toggler:focus {
+        box-shadow: none;
+      }
+
+      .navbar-toggler-icon {
+        background-image: none;
+        position: relative;
+        width: 24px;
+        height: 18px;
+      }
+
+      .navbar-toggler-icon::before,
+      .navbar-toggler-icon::after,
+      .navbar-toggler-icon {
+        background-color: var(--primary-color);
+        transition: all 0.3s ease;
+      }
+
+      .navbar-toggler-icon::before,
+      .navbar-toggler-icon::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+      }
+
+      .navbar-toggler-icon::before {
+        top: 0;
+      }
+
+      .navbar-toggler-icon::after {
+        bottom: 0;
+      }
+
+      .navbar-toggler-icon {
+        height: 2px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .navbar-collapse {
+        flex-grow: 0;
+      }
+
+      .navbar-nav {
+        align-items: center;
+        gap: 10px;
+      }
+
+      .navbar-nav .nav-link {
+        color: #333 !important;
+        font-size: 14px;
+        font-weight: 600;
+        margin: 0 10px;
+        position: relative;
+        opacity: 0;
+        animation: fadeInUp 0.6s ease-out forwards;
+        animation-delay: calc(0.9s + var(--nav-delay, 0s));
+        transition: all 0.3s ease;
+        padding: 10px 15px !important;
+        border-radius: 25px;
+      }
+
+      .navbar-nav .nav-item:nth-child(1) .nav-link {
+        --nav-delay: 0.1s;
+      }
+      .navbar-nav .nav-item:nth-child(2) .nav-link {
+        --nav-delay: 0.2s;
+      }
+      .navbar-nav .nav-item:nth-child(3) .nav-link {
+        --nav-delay: 0.3s;
+      }
+      .navbar-nav .nav-item:nth-child(4) .nav-link {
+        --nav-delay: 0.4s;
+      }
+      .navbar-nav .nav-item:nth-child(5) .nav-link {
+        --nav-delay: 0.5s;
+      }
+      .navbar-nav .nav-item:nth-child(6) .nav-link {
+        --nav-delay: 0.6s;
+      }
+
+      .navbar-nav .nav-link:hover {
+        color: var(--primary-color) !important;
+        background-color: rgba(220, 53, 69, 0.1);
+      }
+
+      .navbar-nav .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 5px;
+        left: 50%;
+        background-color: var(--primary-color);
+        transition: all 0.3s ease;
+      }
+
+      .navbar-nav .nav-link:hover::after {
+        width: calc(100% - 30px);
+        left: 15px;
+      }
+
+      .apply-btn {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 10px 10px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        opacity: 0;
+        animation: fadeInUp 0.6s ease-out 1.5s forwards;
+        position: relative;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .apply-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .apply-btn:hover::before {
+        left: 100%;
+      }
+
+      .apply-btn:hover {
+        background-color: #c82333;
+        color: white;
+        text-decoration: none;
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 5px 15px rgba(220, 53, 69, 0.4);
+      }
+
+      /* Hero Carousel Section */
+      .hero-carousel {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        min-height: 80vh;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-carousel::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="0,0 100,0 100,100" fill="%23f1f3f4" opacity="0.3"/></svg>');
+        z-index: 1;
+      }
+
+      .carousel-item {
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .carousel-inner {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .carousel-inner .carousel-item {
+        position: relative;
+        display: none;
+        float: left;
+        width: 100%;
+        margin-right: -100%;
+        backface-visibility: hidden;
+        transition: transform 0.6s ease-in-out;
+      }
+
+      .carousel-inner .carousel-item.active {
+        display: flex;
+      }
+
+      .carousel-inner .carousel-item-next,
+      .carousel-inner .carousel-item-prev {
+        display: flex;
+      }
+
+      .carousel-inner .carousel-item-next {
+        transform: translateX(100%);
+      }
+
+      .carousel-inner .carousel-item-prev {
+        transform: translateX(-100%);
+      }
+
+      .carousel-inner .carousel-item-next.carousel-item-start,
+      .carousel-inner .carousel-item-prev.carousel-item-end {
+        transform: translateX(0);
+      }
+
+      .carousel-inner .carousel-item-prev.carousel-item-start,
+      .carousel-inner .carousel-item-next.carousel-item-end {
+        transform: translateX(0);
+      }
+
+      .carousel-item:nth-child(1) {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.3)
+          ),
+          url("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&h=1080&fit=crop");
+      }
+
+      .carousel-item:nth-child(2) {
+        background-image: linear-gradient(
+            rgba(13, 110, 253, 0.6),
+            rgba(13, 110, 253, 0.3)
+          ),
+          url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&h=1080&fit=crop");
+      }
+
+      .carousel-item:nth-child(3) {
+        background-image: linear-gradient(
+            rgba(25, 135, 84, 0.6),
+            rgba(25, 135, 84, 0.3)
+          ),
+          url("https://images.unsplash.com/photo-1577896851231-70ef18881754?w=1920&h=1080&fit=crop");
+      }
+
+      .carousel-inner::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .hero-buttons {
+        animation: slideInLeft 1s ease-out 0.6s both;
+      }
+
+      .achievement-text {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .achievement-text h4 {
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .achievement-text p {
+        color: var(--secondary-color);
+        margin: 0;
+      }
+
+      /* Custom Carousel Controls */
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 50px;
+        height: 50px;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0.8;
+        transition: all 0.3s ease;
+      }
+
+      .carousel-control-prev {
+        left: 30px;
+      }
+
+      .carousel-control-next {
+        right: 30px;
+      }
+
+      .carousel-control-prev:hover,
+      .carousel-control-next:hover {
+        opacity: 1;
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      /* Custom Carousel Indicators */
+      .carousel-indicators {
+        bottom: 30px;
+      }
+
+      .carousel-indicators [data-bs-target] {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+        opacity: 0.5;
+        transition: all 0.3s ease;
+      }
+
+      .carousel-indicators .active {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+
+      /* Hero Content Styles */
+      .hero-content {
+        padding: 40px 0;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-title {
+        font-size: 4rem;
+        font-weight: 900;
+        color: white;
+        line-height: 1;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero-subtitle {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 10px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero-description {
+        font-size: 1.3rem;
+        color: white;
+        margin-bottom: 30px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Achievement Cards */
+      .achievement-images {
+        padding: 20px;
+      }
+
+      .achievement-card {
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+
+      .achievement-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .achievement-image {
+        margin-bottom: 15px;
+      }
+
+      .achievement-image i {
+        color: var(--primary-color);
+      }
+
+      .navbar.navbar-scrolled {
+        top: 0; /* Move to top when scrolled past contact bar */
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Animations */
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Stats Section */
+      .stats-section {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 60px 0;
+        margin-top: 50px;
+      }
+
+      .stat-item {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: bold;
+        display: block;
+      }
+
+      .stat-label {
+        font-size: 1.1rem;
+        margin-top: 10px;
+      }
+
+      /* Features Section */
+      .features-section {
+        padding: 80px 0;
+      }
+
+      .feature-card {
+        text-align: center;
+        padding: 30px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      }
+
+      .feature-icon {
+        width: 80px;
+        height: 80px;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        color: white;
+        font-size: 30px;
+      }
+
+      .feature-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 15px;
+      }
+
+      .feature-description {
+        color: var(--secondary-color);
+        line-height: 1.6;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #2c3e50;
+        color: white;
+        padding: 50px 0 20px;
+      }
+
+      .footer h5 {
+        color: var(--primary-color);
+        margin-bottom: 20px;
+      }
+
+      .footer-links {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: #bdc3c7;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: white;
+      }
+
+      .social-icons a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        background-color: #c82333;
+        transform: translateY(-2px);
+      }
+
+      /* RESPONSIVE DESIGN - FIXED */
+      @media (max-width: 991.98px) {
+        .navbar {
+          padding: 20px 0;
+          min-height: 90px;
+        }
+
+        .navbar-collapse {
+          margin-top: 15px;
+          background-color: white;
+          border-radius: 10px;
+          padding: 20px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-nav {
+          gap: 5px;
+        }
+
+        .navbar-nav .nav-link {
+          padding: 12px 20px !important;
+          margin: 0 0 5px 0;
+          border-radius: 8px;
+        }
+
+        .apply-btn {
+          margin-top: 15px;
+          display: inline-block;
+          text-align: center;
+          width: 100%;
+        }
+
+        body {
+          padding-top: 124px;
+        }
+
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.8rem;
+        }
+
+        .hero-description {
+          font-size: 1.1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .top-contact-bar .contact-item {
+          margin-right: 15px;
+          font-size: 12px;
+        }
+
+        .carousel-control-prev {
+          left: 15px;
+        }
+
+        .carousel-control-next {
+          right: 15px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .top-contact-bar {
+          font-size: 12px;
+          padding: 6px 0;
+        }
+
+        .top-contact-bar .contact-item {
+          margin-right: 10px;
+          margin-bottom: 5px;
+        }
+
+        .navbar {
+          padding: 18px 0;
+          min-height: 85px;
+        }
+
+        .navbar .container {
+          padding: 0 15px;
+        }
+
+        .navbar-brand {
+          padding: 5px 0;
+        }
+
+        .logo-circle {
+          width: 45px;
+          height: 45px;
+          margin-right: 12px;
+        }
+
+        .logo-circle i {
+          font-size: 18px;
+        }
+
+        .academy-name h3 {
+          font-size: 15px;
+          line-height: 1.2;
+        }
+
+        .academy-name p {
+          font-size: 9px;
+          line-height: 1.1;
+        }
+
+        .navbar-toggler {
+          padding: 6px 8px;
+          margin-top: 5px;
+        }
+
+        body {
+          padding-top: 119px;
+        }
+
+        .hero-title {
+          font-size: 2rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.5rem;
+        }
+
+        .hero-description {
+          font-size: 1rem;
+        }
+
+        .download-brochure-btn {
+          font-size: 11px;
+          padding: 4px 12px;
+        }
+      }
+
+      /* Add extra small screens support */
+      @media (max-width: 480px) {
+        .navbar {
+          padding: 20px 0;
+          min-height: 88px;
+        }
+
+        .logo-circle {
+          width: 42px;
+          height: 42px;
+          margin-right: 10px;
+        }
+
+        .logo-circle i {
+          font-size: 16px;
+        }
+
+        .academy-name h3 {
+          font-size: 14px;
+        }
+
+        .academy-name p {
+          font-size: 8px;
+        }
+
+        body {
+          padding-top: 122px;
+        }
+      }
+
+      @media (max-width: 375px) {
+        .navbar {
+          padding: 22px 0;
+          min-height: 90px;
+        }
+
+        .navbar .container {
+          padding: 0 10px;
+        }
+
+        .logo-circle {
+          width: 40px;
+          height: 40px;
+          margin-right: 10px;
+        }
+
+        .logo-circle i {
+          font-size: 15px;
+        }
+
+        .academy-name h3 {
+          font-size: 13px;
+        }
+
+        .academy-name p {
+          font-size: 7px;
+        }
+
+        body {
+          padding-top: 124px;
+        }
+
+        .top-contact-bar .contact-item {
+          margin-right: 8px;
+          font-size: 11px;
+        }
+
+        .download-brochure-btn {
+          font-size: 10px;
+          padding: 3px 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Contact Bar -->
+    <div class="top-contact-bar">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-10">
+            <span class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              Hojai Branch: (+91) 9876543210
+            </span>
+            <!-- <span class="contact-item">
+              <i class="fas fa-phone"></i>
+              Guwahati Branch: (+91) 9876543211
+            </span>
+            <span class="contact-item">
+              <i class="fas fa-phone"></i>
+              Nagaon Branch: (+91) 9876543212
+            </span> -->
+          </div>
+          <div class="col-md-2 text-end">
+            <a href="#" class="download-brochure-btn"> DOWNLOAD BROCHURE </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <div class="logo-circle">
+            <img src="/assets/images/logo.webp" alt="" />
+          </div>
+          <div class="academy-name">
+            <h3>AJMAL</h3>
+            <h3>IAS Academy</h3>
+            <p>Excellence in Education</p>
+          </div>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto me-4">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">HOME</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                ABOUT US
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Our Story</a></li>
+                <li><a class="dropdown-item" href="#">Faculty</a></li>
+                <li><a class="dropdown-item" href="#">Infrastructure</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                ACHIEVERS
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Success Stories</a></li>
+                <li><a class="dropdown-item" href="#">Toppers</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                COURSES
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">UPSC Prelims</a></li>
+                <li><a class="dropdown-item" href="#">UPSC Mains</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Interview Guidance</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                BRANCHES
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Hojai</a></li>
+                <!-- <li><a class="dropdown-item" href="#">Guwahati</a></li>
+                <li><a class="dropdown-item" href="#">Nagaon</a></li> -->
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#blogs">BLOGS</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                NEWS & MEDIA
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Latest News</a></li>
+                <li><a class="dropdown-item" href="#">Media Coverage</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+              >
+                CONTACT
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                <li><a class="dropdown-item" href="#">Location</a></li>
+              </ul>
+            </li>
+          </ul>
+          <a href="#" class="apply-btn">APPLY TODAY</a>
+        </div>
+      </div>
+    </nav>
+    <!--nav script-->
+    <script>
+      let lastScrollTop = 0;
+        
+        window.addEventListener("scroll", function () {
+            const navbar = document.querySelector(".navbar");
+            const contactBar = document.querySelector(".top-contact-bar");
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            // Hide/show contact bar and add scrolled class to navbar
+            if (scrollTop > 100) {
+                contactBar.style.transform = "translateY(-100%)";
+                navbar.classList.add("navbar-scrolled");
+            } else {
+                contactBar.style.transform = "translateY(0)";
+                navbar.classList.remove("navbar-scrolled");
+            }
+
+            lastScrollTop = scrollTop;
+        });
+
+        // Auto-close mobile menu when clicking on nav links
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link:not(.dropdown-toggle)');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            
+            navLinks.forEach(function(navLink) {
+                navLink.addEventListener('click', function() {
+                    // Check if we're in mobile view (navbar-collapse is shown)
+                    if (navbarCollapse.classList.contains('show')) {
+                        // Close the mobile menu
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                            toggle: false
+                        });
+                        bsCollapse.hide();
+                        
+                        // Update toggler button state
+                        navbarToggler.classList.add('collapsed');
+                        navbarToggler.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+
+            // Handle dropdown items as well
+            const dropdownItems = document.querySelectorAll('.dropdown-item');
+            dropdownItems.forEach(function(dropdownItem) {
+                dropdownItem.addEventListener('click', function() {
+                    if (navbarCollapse.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                            toggle: false
+                        });
+                        bsCollapse.hide();
+                        
+                        navbarToggler.classList.add('collapsed');
+                        navbarToggler.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- Hero Section -->
+    <section class="hero-carousel" id="home">
+      <div
+        id="heroCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-interval="5000"
+      >
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="0"
+            class="active"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="2"
+          ></button>
+        </div>
+
+        <!-- Carousel Inner -->
+        <div class="carousel-inner">
+          <!-- Slide 1 - Main Achievement -->
+          <div class="carousel-item active">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-lg-6">
+                  <div class="hero-content">
+                    <div class="hero-title">250+</div>
+                    <div class="hero-subtitle">SELECTIONS</div>
+                    <div class="hero-description">IN UPSC CSE 2022-24</div>
+                    <div class="hero-buttons mt-4">
+                      <a href="#" class="apply-btn me-3">Start Your Journey</a>
+                      <a href="#" class="btn btn-outline-primary"
+                        >View Results</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="achievement-images">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="achievement-card">
+                          <div class="achievement-image">
+                            <i class="fas fa-trophy fa-3x"></i>
+                          </div>
+                          <div class="achievement-text">
+                            <h4>Top Ranks</h4>
+                            <p>Consistent top performers</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="achievement-card">
+                          <div class="achievement-image">
+                            <i class="fas fa-medal fa-3x"></i>
+                          </div>
+                          <div class="achievement-text">
+                            <h4>Excellence</h4>
+                            <p>Award winning results</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 - Success Stories -->
+          <div class="carousel-item">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-lg-6">
+                  <div class="hero-content">
+                    <div class="hero-title">95%</div>
+                    <div class="hero-subtitle">SUCCESS RATE</div>
+                    <div class="hero-description">PRELIMS QUALIFICATION</div>
+                    <div class="hero-buttons mt-4">
+                      <a href="#" class="apply-btn me-3"
+                        >Join Success Stories</a
+                      >
+                      <!-- <a href="#" class="btn btn-outline-primary"
+                        >Read Testimonials</a
+                      > -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="achievement-images">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="achievement-card">
+                          <div class="achievement-image">
+                            <i class="fas fa-users fa-3x"></i>
+                          </div>
+                          <div class="achievement-text">
+                            <h4>Happy Students</h4>
+                            <p>5000+ success stories</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="achievement-card">
+                          <div class="achievement-image">
+                            <i class="fas fa-star fa-3x"></i>
+                          </div>
+                          <div class="achievement-text">
+                            <h4>Reputed Ratings</h4>
+                            <p>Excellent reviews</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 - Expert Faculty -->
+          <div class="carousel-item">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-lg-6">
+                  <div class="hero-content">
+                    <div class="hero-title">MANY+</div>
+                    <div class="hero-subtitle">YEARS</div>
+                    <div class="hero-description">
+                      EXPERIENCE IN UPSC COACHING
+                    </div>
+                    <div class="hero-buttons mt-4">
+                      <a href="#" class="apply-btn me-3">Meet Our Faculty</a>
+                      <a href="#" class="btn btn-outline-primary"
+                        >Free Demo Class</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="achievement-images">
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="achievement-card">
+                          <div class="achievement-image">
+                            <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                          </div>
+                          <div class="achievement-text">
+                            <h4>Expert Faculty</h4>
+                            <p>IAS/IPS officers</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="achievement-card">
+                          <div class="achievement-image">
+                            <i class="fas fa-book fa-3x"></i>
+                          </div>
+                          <div class="achievement-text">
+                            <h4>Study Material</h4>
+                            <p>Updated curriculum</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <!--Welcome Section-->>
+
+    <section class="hero-section">
+      <div class="container">
+        <!-- <h1 class="main-heading">
+          Best <span class="highlight-textss">APSC Coaching</span> in Hojai,
+          Assam.
+        </h1> -->
+
+        <div class="row content-section">
+          <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+            <h2 class="section-title">Welcome To AJMAL IAS Academy</h2>
+            <div class="title-underline"></div>
+
+            <p class="description-text">
+              Founded in <span class="stats-highlight">2023,</span> AJMALS IAS
+              Academy has been consistently delivering impactful training,
+              boasting the highest student success rate in UPSC, APSC, and ACS
+              examinations.
+              <span class="stats-highlight">UPSC, APSC & ACS</span>.
+            </p>
+
+            <p class="description-text">
+              To drive meaningful progress in our nation's development, we need
+              dedicated individuals equipped with strong administrative skills
+              to serve society effectively. Our mission is to cultivate highly
+              skilled and responsible officers who uphold the principles of
+              Administrative Law in India. Recognizing the immense
+              responsibilities of an IAS officer and the intense competition of
+              the field, we are committed to providing the finest training and
+              guidance for aspirants to succeed by providing
+              <span class="stats-highlight">UPSC and APSC coaching</span> to our
+              students. Our branch is located in
+              <span class="stats-highlight">Hojai, Assam</span>.
+            </p>
+
+            <a href="#" class="know-more-btn">
+              Know More <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+          </div>
+
+          <div class="col-lg-6 col-md-12">
+            <!-- Social Media Connect Section -->
+            <div class="social-connect-inline">
+              <h3 class="connect-title-inline">Connect with us</h3>
+              <p class="connect-subtitle-inline">
+                Stay updated with our latest courses, tips, and success stories
+              </p>
+
+              <div class="social-links-inline">
+                <a
+                  href="https://www.linkedin.com/company/ajmals-ias-academy"
+                  class="social-link-inline linkedin"
+                  target="_blank"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                  LinkedIn
+                </a>
+
+                <a
+                  href="https://www.youtube.com/@AjmalsIASAcademy"
+                  class="social-link-inline youtube"
+                  target="_blank"
+                >
+                  <i class="fab fa-youtube"></i>
+                  YouTube
+                </a>
+
+                <a
+                  href="https://www.facebook.com/AjmalsIASAcademy"
+                  class="social-link-inline facebook"
+                  target="_blank"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                  Facebook
+                </a>
+
+                <a
+                  href="https://wa.me/919876543210?text=Hello%2C%20I%20want%20to%20know%20about%20APSC%20coaching"
+                  class="social-link-inline whatsapp"
+                  target="_blank"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                  WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-md-10">
+            <div class="video-section-header text-center mb-4">
+              <h2 class="video-section-title">Watch Our Introduction</h2>
+              <p class="video-section-subtitle">
+                Learn more about AJMALS IAS Academy and our teaching methodology
+              </p>
+            </div>
+
+            <div class="video-container">
+              <div class="video-player-mockup">
+                <div class="video-thumbnail">
+                  <img
+                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=450&q=80"
+                    alt="AJMAL'S IAS ACADEMY Video"
+                    class="img-fluid w-100 h-100"
+                    style="object-fit: cover"
+                  />
+
+                  <div class="play-button-overlay">
+                    <button class="play-btn" onclick="playVideo()">
+                      <i class="fas fa-play"></i>
+                    </button>
+                  </div>
+
+                  <div class="video-duration">5:42</div>
+                </div>
+
+                <div class="video-overlay-top">
+                  <div class="channel-info">
+                    <i
+                      class="fab fa-youtube"
+                      style="color: #ff0000; margin-right: 5px"
+                    ></i>
+                    AJMAL'S IAS ACADEMY
+                  </div>
+
+                  <div class="video-controls">
+                    <button class="control-btn">
+                      <i class="far fa-clock"></i> Watch later
+                    </button>
+                    <button class="control-btn">
+                      <i class="fas fa-share"></i> Share
+                    </button>
+                  </div>
+                </div>
+
+                <div class="video-overlay-bottom">
+                  <div class="youtube-branding">
+                    <span>Watch on</span>
+                    <i
+                      class="fab fa-youtube"
+                      style="color: #ff0000; margin: 0 5px"
+                    ></i>
+                    <span style="font-weight: 600">YouTube</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Add smooth scrolling and interactive effects
+      document.addEventListener("DOMContentLoaded", function () {
+        // Animate elements on scroll
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "translateY(0)";
+            }
+          });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document
+          .querySelectorAll(
+            ".section-title, .description-text, .video-container"
+          )
+          .forEach((el) => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(30px)";
+            el.style.transition = "all 0.8s ease";
+            observer.observe(el);
+          });
+
+        // Add click effect to button
+        const knowMoreBtn = document.querySelector(".know-more-btn");
+        if (knowMoreBtn) {
+          knowMoreBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            this.style.transform = "scale(0.95)";
+            setTimeout(() => {
+              this.style.transform = "translateY(-2px) scale(1)";
+            }, 150);
+          });
+        }
+
+        // Add click analytics for inline social links
+        document.querySelectorAll(".social-link-inline").forEach((link) => {
+          link.addEventListener("click", function () {
+            const platform = this.textContent.trim();
+            console.log(`Social link clicked: ${platform}`);
+          });
+        });
+
+        // Add ripple effect to inline social links
+        document.querySelectorAll(".social-link-inline").forEach((link) => {
+          link.addEventListener("click", function (e) {
+            const ripple = document.createElement("span");
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+
+            ripple.style.cssText = `
+                        position: absolute;
+                        width: ${size}px;
+                        height: ${size}px;
+                        left: ${x}px;
+                        top: ${y}px;
+                        background: rgba(255,255,255,0.3);
+                        border-radius: 50%;
+                        transform: scale(0);
+                        animation: ripple 0.6s linear;
+                        pointer-events: none;
+                    `;
+
+            this.style.position = "relative";
+            this.style.overflow = "hidden";
+            this.appendChild(ripple);
+
+            setTimeout(() => {
+              ripple.remove();
+            }, 600);
+          });
+        });
+      });
+
+      // Video play functionality
+      function playVideo() {
+        window.open("https://www.youtube.com/watch?v=QrvqoahVrDU", "_blank");
+      }
+
+      // Add CSS for ripple animation
+      const style = document.createElement("style");
+      style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+      document.head.appendChild(style);
+    </script>
+
+    <!--Courses Section-->
+    <div class="container-fluid">
+      <div class="container">
+        <!-- Header Section -->
+        <div class="text-center mb-5">
+          <h1 class="main-title">
+            Courses from your Top APSC Coaching Institute
+          </h1>
+          <div class="underline-accent"></div>
+          <p class="subtitle">
+            We provide top-tier coaching for UPSC and APSC aspirants, offering
+            updated course materials and guidance from exceptional faculty. With
+            centers all over in North-East-India, we are dedicated to shaping
+            future leaders through quality education and unwavering support.
+          </p>
+        </div>
+
+        <!-- Course Cards Section - Single Row -->
+        <div class="row g-3">
+          <!-- UPSC Course -->
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="course-card upsc-card">
+              <div class="course-content">
+                <h3 class="course-title">UPSC Course</h3>
+                <ul class="course-features">
+                  <li>Regular Classroom Course</li>
+                  <li>Online Course</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- APSC Course -->
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="course-card apsc-card">
+              <div class="course-content">
+                <h3 class="course-title">APSC Course</h3>
+                <ul class="course-features">
+                  <li>Regular Classroom Course</li>
+                  <li>Online Course</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Assam State Govt. Exams -->
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="course-card assam-card">
+              <div class="course-content">
+                <h3 class="course-title">Assam State Govt. Exams</h3>
+                <ul class="course-features">
+                  <li>Regular Classroom Course</li>
+                  <li>Online Course</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- UPSC & APSC Optional Course -->
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="course-card optional-card">
+              <div class="course-content">
+                <h3 class="course-title">UPSC & APSC Optional Course</h3>
+                <ul class="course-features">
+                  <li>Regular Classroom Course</li>
+                  <li>Online Course</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Achievers Section-->>
+    <section class="achievers-section">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-title">Our Achievers</h2>
+          <p class="section-description">
+            Meet our outstanding students who have achieved remarkable success
+            in competitive examinations. Their dedication and our guidance have
+            paved the way for their bright futures in civil services.
+          </p>
+        </div>
+
+        <div class="row">
+          <!-- Desktop Achievers Grid -->
+          <div class="col-12">
+            <div class="row achievers-grid">
+              <!-- Row 1 - First 4 achievers (always visible) -->
+              <div class="col-md-6 col-lg-3 mb-4">
+                <div class="achiever-card">
+                  <img
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+                    alt="Prabhat Singh"
+                    class="achiever-photo"
+                  />
+                  <h4 class="achiever-name">Prabhat Singh</h4>
+                  <span class="achievement-badge">AIR-377, UPSC-2019</span>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-3 mb-4">
+                <div class="achiever-card">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+                    alt="Kongkon Jyoti Saikia"
+                    class="achiever-photo"
+                  />
+                  <h4 class="achiever-name">Kongkon Jyoti Saikia</h4>
+                  <span class="achievement-badge rank-1">ACS 1st Rank</span>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-3 mb-4">
+                <div class="achiever-card">
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face"
+                    alt="Bilivia Choudhury"
+                    class="achiever-photo"
+                  />
+                  <h4 class="achiever-name">Bilivia Choudhury</h4>
+                  <span class="achievement-badge rank-3">ALRS 3rd Rank</span>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-3 mb-4">
+                <div class="achiever-card">
+                  <img
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
+                    alt="Apratim Goswami"
+                    class="achiever-photo"
+                  />
+                  <h4 class="achiever-name">Apratim Goswami</h4>
+                  <span class="achievement-badge rank-20">ACS Rank 20</span>
+                </div>
+              </div>
+
+              <!-- Row 2 - Next 4 achievers (always visible) -->
+              <div class="col-md-6 col-lg-3 mb-4">
+                <div class="achiever-card">
+                  <img
+                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face"
+                    alt="Raja Phukan"
+                    class="achiever-photo"
+                  />
+                  <h4 class="achiever-name">Raja Phukan</h4>
+                  <span class="achievement-badge rank-1">ACS 1st Rank</span>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-3 mb-4">
+                <div class="achiever-card">
+                  <img
+                    src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face"
+                    alt="Hemanta Boro"
+                    class="achiever-photo"
+                  />
+                  <h4 class="achiever-name">Hemanta Boro</h4>
+                  <span class="achievement-badge">APSC Mains</span>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-3 mb-4">
+                <div class="achiever-card">
+                  <img
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+                    alt="Kumar Gaurav Das"
+                    class="achiever-photo"
+                  />
+                  <h4 class="achiever-name">Kumar Gaurav Das</h4>
+                  <span class="achievement-badge">ACS 7th Rank</span>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-3 mb-4">
+                <div class="achiever-card">
+                  <img
+                    src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=150&h=150&fit=crop&crop=face"
+                    alt="Dr. Laba Kr. Deka"
+                    class="achiever-photo"
+                  />
+                  <h4 class="achiever-name">Dr. Laba Kr. Deka</h4>
+                  <span class="achievement-badge">ACS 5th Rank</span>
+                </div>
+              </div>
+
+              <!-- Hidden achievers (more achievers to show when "View More" is clicked) -->
+              <div class="col-md-6 col-lg-3 mb-4 hidden-achievers">
+                <div class="achiever-card">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+                    alt="Rajesh Kumar"
+                    class="achiever-photo"
+                  />
+                  <h4 class="achiever-name">Rajesh Kumar</h4>
+                  <span class="achievement-badge">ACS 2nd Rank</span>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-3 mb-4 hidden-achievers">
+                <div class="achiever-card">
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face"
+                    alt="Priya Sharma"
+                    class="achiever-photo"
+                  />
+                  <h4 class="achiever-name">Priya Sharma</h4>
+                  <span class="achievement-badge rank-3">ALRS 4th Rank</span>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-3 mb-4 hidden-achievers">
+                <div class="achiever-card">
+                  <img
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
+                    alt="Amit Verma"
+                    class="achiever-photo"
+                  />
+                  <h4 class="achiever-name">Amit Verma</h4>
+                  <span class="achievement-badge">ACS 12th Rank</span>
+                </div>
+              </div>
+
+              <div class="col-md-6 col-lg-3 mb-4 hidden-achievers">
+                <div class="achiever-card">
+                  <img
+                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face"
+                    alt="Sunita Devi"
+                    class="achiever-photo"
+                  />
+                  <h4 class="achiever-name">Sunita Devi</h4>
+                  <span class="achievement-badge rank-1">APS 1st Rank</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- View More Button -->
+            <div class="text-center">
+              <button
+                class="view-more-btn"
+                id="viewMoreBtn"
+                onclick="toggleAchievers()"
+              >
+                View More Achievers
+              </button>
+            </div>
+
+            <!-- Mobile Carousel -->
+            <div class="mobile-carousel-container">
+              <div class="mobile-carousel-track" id="carouselTrack">
+                <div class="mobile-carousel-slide">
+                  <div class="achiever-card">
+                    <img
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+                      alt="Prabhat Singh"
+                      class="achiever-photo"
+                    />
+                    <h4 class="achiever-name">Prabhat Singh</h4>
+                    <span class="achievement-badge">AIR-377, UPSC-2019</span>
+                  </div>
+                </div>
+
+                <div class="mobile-carousel-slide">
+                  <div class="achiever-card">
+                    <img
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+                      alt="Kongkon Jyoti Saikia"
+                      class="achiever-photo"
+                    />
+                    <h4 class="achiever-name">Kongkon Jyoti Saikia</h4>
+                    <span class="achievement-badge rank-1">ACS 1st Rank</span>
+                  </div>
+                </div>
+
+                <div class="mobile-carousel-slide">
+                  <div class="achiever-card">
+                    <img
+                      src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face"
+                      alt="Bilivia Choudhury"
+                      class="achiever-photo"
+                    />
+                    <h4 class="achiever-name">Bilivia Choudhury</h4>
+                    <span class="achievement-badge rank-3">ALRS 3rd Rank</span>
+                  </div>
+                </div>
+
+                <div class="mobile-carousel-slide">
+                  <div class="achiever-card">
+                    <img
+                      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
+                      alt="Apratim Goswami"
+                      class="achiever-photo"
+                    />
+                    <h4 class="achiever-name">Apratim Goswami</h4>
+                    <span class="achievement-badge rank-20">ACS Rank 20</span>
+                  </div>
+                </div>
+
+                <div class="mobile-carousel-slide">
+                  <div class="achiever-card">
+                    <img
+                      src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop&crop=face"
+                      alt="Raja Phukan"
+                      class="achiever-photo"
+                    />
+                    <h4 class="achiever-name">Raja Phukan</h4>
+                    <span class="achievement-badge rank-1">ACS 1st Rank</span>
+                  </div>
+                </div>
+
+                <div class="mobile-carousel-slide">
+                  <div class="achiever-card">
+                    <img
+                      src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop&crop=face"
+                      alt="Hemanta Boro"
+                      class="achiever-photo"
+                    />
+                    <h4 class="achiever-name">Hemanta Boro</h4>
+                    <span class="achievement-badge">APSC Mains</span>
+                  </div>
+                </div>
+
+                <div class="mobile-carousel-slide">
+                  <div class="achiever-card">
+                    <img
+                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+                      alt="Kumar Gaurav Das"
+                      class="achiever-photo"
+                    />
+                    <h4 class="achiever-name">Kumar Gaurav Das</h4>
+                    <span class="achievement-badge">ACS 7th Rank</span>
+                  </div>
+                </div>
+
+                <div class="mobile-carousel-slide">
+                  <div class="achiever-card">
+                    <img
+                      src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=150&h=150&fit=crop&crop=face"
+                      alt="Dr. Laba Kr. Deka"
+                      class="achiever-photo"
+                    />
+                    <h4 class="achiever-name">Dr. Laba Kr. Deka</h4>
+                    <span class="achievement-badge">ACS 5th Rank</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Carousel Controls -->
+              <div class="carousel-controls">
+                <button class="carousel-btn" id="prevBtn">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn" id="nextBtn">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+
+              <!-- Carousel Indicators -->
+              <div class="carousel-indicators" id="carouselIndicators"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // View More/Less functionality
+      let isExpanded = false;
+
+      function toggleAchievers() {
+        const hiddenAchievers = document.querySelectorAll(".hidden-achievers");
+        const viewMoreBtn = document.getElementById("viewMoreBtn");
+
+        if (!isExpanded) {
+          hiddenAchievers.forEach((achiever) => {
+            achiever.style.display = "block";
+          });
+          viewMoreBtn.textContent = "View Less";
+          isExpanded = true;
+        } else {
+          hiddenAchievers.forEach((achiever) => {
+            achiever.style.display = "none";
+          });
+          viewMoreBtn.textContent = "View More Achievers";
+          isExpanded = false;
+        }
+      }
+
+      // Mobile Carousel functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        let currentSlide = 0;
+        let autoPlayInterval;
+
+        const slides = document.querySelectorAll(".mobile-carousel-slide");
+        const totalSlides = slides.length;
+        const track = document.getElementById("carouselTrack");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+        const indicatorsContainer =
+          document.getElementById("carouselIndicators");
+
+        // Only initialize carousel if elements exist (mobile view)
+        if (!track || !slides.length) return;
+
+        // Create indicators
+        for (let i = 0; i < totalSlides; i++) {
+          const dot = document.createElement("div");
+          dot.className = "carousel-dot";
+          if (i === 0) dot.classList.add("active");
+          dot.addEventListener("click", () => goToSlide(i));
+          indicatorsContainer.appendChild(dot);
+        }
+
+        const indicators = document.querySelectorAll(".carousel-dot");
+
+        function updateCarousel() {
+          if (!slides.length) return;
+
+          const slideWidth = slides[0].offsetWidth;
+          track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+
+          // Update indicators
+          indicators.forEach((dot, index) => {
+            dot.classList.toggle("active", index === currentSlide);
+          });
+        }
+
+        function goToSlide(slideIndex) {
+          currentSlide = slideIndex;
+          updateCarousel();
+          resetAutoPlay();
+        }
+
+        function nextSlide() {
+          currentSlide++;
+          if (currentSlide >= totalSlides) {
+            currentSlide = 0;
+          }
+          updateCarousel();
+        }
+
+        function prevSlide() {
+          currentSlide--;
+          if (currentSlide < 0) {
+            currentSlide = totalSlides - 1;
+          }
+          updateCarousel();
+        }
+
+        function startAutoPlay() {
+          autoPlayInterval = setInterval(() => {
+            nextSlide();
+          }, 4000);
+        }
+
+        function stopAutoPlay() {
+          if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+          }
+        }
+
+        function resetAutoPlay() {
+          stopAutoPlay();
+          startAutoPlay();
+        }
+
+        // Event listeners
+        if (nextBtn) {
+          nextBtn.addEventListener("click", () => {
+            nextSlide();
+            resetAutoPlay();
+          });
+        }
+
+        if (prevBtn) {
+          prevBtn.addEventListener("click", () => {
+            prevSlide();
+            resetAutoPlay();
+          });
+        }
+
+        // Touch/swipe support for mobile
+        let startX = 0;
+        let isDragging = false;
+
+        track.addEventListener(
+          "touchstart",
+          (e) => {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+            stopAutoPlay();
+          },
+          { passive: true }
+        );
+
+        track.addEventListener(
+          "touchmove",
+          (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+          },
+          { passive: false }
+        );
+
+        track.addEventListener(
+          "touchend",
+          (e) => {
+            if (!isDragging) return;
+
+            const endX = e.changedTouches[0].clientX;
+            const diffX = startX - endX;
+
+            // Minimum swipe distance
+            if (Math.abs(diffX) > 50) {
+              if (diffX > 0) {
+                nextSlide();
+              } else {
+                prevSlide();
+              }
+            }
+
+            isDragging = false;
+            startAutoPlay();
+          },
+          { passive: true }
+        );
+
+        // Pause auto-play when user hovers over carousel (desktop)
+        track.addEventListener("mouseenter", stopAutoPlay);
+        track.addEventListener("mouseleave", startAutoPlay);
+
+        // Handle window resize
+        window.addEventListener("resize", () => {
+          updateCarousel();
+        });
+
+        // Initialize carousel
+        updateCarousel();
+        startAutoPlay();
+      });
+    </script>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="stat-item">
+              <span class="stat-number">250+</span>
+              <div class="stat-label">UPSC Selections</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-item">
+              <span class="stat-number">15+</span>
+              <div class="stat-label">Years Experience</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-item">
+              <span class="stat-number">5000+</span>
+              <div class="stat-label">Students Trained</div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-item">
+              <span class="stat-number">98%</span>
+              <div class="stat-label">Success Rate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+      <div class="container">
+        <div class="row text-center mb-5">
+          <div class="col-12">
+            <h2 class="display-5 fw-bold mb-4">
+              Why Choose AJMAL'S IAS Academy?
+            </h2>
+            <p class="lead text-muted">
+              Leading IAS coaching institute in Hojai, Assam with proven track
+              record
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-chalkboard-teacher"></i>
+              </div>
+              <h4 class="feature-title">Expert Faculty</h4>
+              <p class="feature-description">
+                Learn from experienced faculties who are experts in their
+                respective subjects with years of UPSC coaching experience.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-book-open"></i>
+              </div>
+              <h4 class="feature-title">Comprehensive Study Material</h4>
+              <p class="feature-description">
+                Updated and comprehensive study materials covering all aspects
+                of UPSC syllabus with regular revisions.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-clipboard-check"></i>
+              </div>
+              <h4 class="feature-title">Regular Mock Tests</h4>
+              <p class="feature-description">
+                Regular mock tests and assessments to track your progress and
+                improve your performance continuously.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h4 class="feature-title">Small Batch Size</h4>
+              <p class="feature-description">
+                Limited batch size ensuring personalized attention and better
+                interaction between faculty and students.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-headset"></i>
+              </div>
+              <h4 class="feature-title">Interview Guidance</h4>
+              <p class="feature-description">
+                Comprehensive interview preparation with mock interviews and
+                personality development sessions.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <h4 class="feature-title">Multiple Branches</h4>
+              <p class="feature-description">
+                Conveniently located branches in Hojai, Guwahati, and Nagaon to
+                serve students across Assam.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Archives-->>
+    <section class="archives-section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Archives</h2>
+                <p class="section-description">
+                    Explore our collection of academic papers, research documents, thesis works, and educational resources from our institution.
+                </p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-category="all">All Documents</button>
+                <button class="filter-btn" data-category="papers">Research Papers</button>
+                <button class="filter-btn" data-category="thesis">Thesis Works</button>
+                <button class="filter-btn" data-category="reports">Reports</button>
+                <button class="filter-btn" data-category="books">E-Books</button>
+            </div>
+
+            <!-- Archives Grid -->
+            <div class="archives-grid">
+                <!-- Archive Card 1 -->
+                <div class="archive-card category-papers" data-category="papers">
+                    <div class="archive-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h4 class="archive-title">Impact of Digital Learning on Student Performance</h4>
+                    <div class="archive-meta">
+                        <span><i class="fas fa-calendar"></i> 2023</span>
+                        <span><i class="fas fa-user"></i> Dr. Smith</span>
+                    </div>
+                    <p class="archive-description">
+                        A comprehensive study analyzing the effects of digital learning platforms on academic performance.
+                    </p>
+                    <div class="archive-tags">
+                        <span class="archive-tag">Education</span>
+                        <span class="archive-tag">Technology</span>
+                    </div>
+                    <div class="archive-actions">
+                        <a href="#" class="action-btn btn-primary">
+                            <i class="fas fa-eye"></i> View
+                        </a>
+                        <a href="#" class="action-btn btn-secondary">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                        <span class="download-count">
+                            <i class="fas fa-download"></i> 342
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Archive Card 2 -->
+                <div class="archive-card category-thesis" data-category="thesis">
+                    <div class="archive-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h4 class="archive-title">Machine Learning Applications in Healthcare</h4>
+                    <div class="archive-meta">
+                        <span><i class="fas fa-calendar"></i> 2023</span>
+                        <span><i class="fas fa-user"></i> John Doe</span>
+                    </div>
+                    <p class="archive-description">
+                        PhD thesis exploring machine learning algorithms in modern healthcare systems.
+                    </p>
+                    <div class="archive-tags">
+                        <span class="archive-tag">AI/ML</span>
+                        <span class="archive-tag">Healthcare</span>
+                    </div>
+                    <div class="archive-actions">
+                        <a href="#" class="action-btn btn-primary">
+                            <i class="fas fa-eye"></i> View
+                        </a>
+                        <a href="#" class="action-btn btn-secondary">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                        <span class="download-count">
+                            <i class="fas fa-download"></i> 256
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Archive Card 3 -->
+                <div class="archive-card category-reports" data-category="reports">
+                    <div class="archive-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h4 class="archive-title">Annual Academic Performance Report 2023</h4>
+                    <div class="archive-meta">
+                        <span><i class="fas fa-calendar"></i> 2023</span>
+                        <span><i class="fas fa-building"></i> Institution</span>
+                    </div>
+                    <p class="archive-description">
+                        Comprehensive analysis of academic achievements and student performance metrics.
+                    </p>
+                    <div class="archive-tags">
+                        <span class="archive-tag">Analytics</span>
+                        <span class="archive-tag">Performance</span>
+                    </div>
+                    <div class="archive-actions">
+                        <a href="#" class="action-btn btn-primary">
+                            <i class="fas fa-eye"></i> View
+                        </a>
+                        <a href="#" class="action-btn btn-secondary">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                        <span class="download-count">
+                            <i class="fas fa-download"></i> 189
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Archive Card 4 -->
+                <div class="archive-card category-books" data-category="books">
+                    <div class="archive-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h4 class="archive-title">Advanced Mathematics for Engineers</h4>
+                    <div class="archive-meta">
+                        <span><i class="fas fa-calendar"></i> 2022</span>
+                        <span><i class="fas fa-user"></i> Prof. Johnson</span>
+                    </div>
+                    <p class="archive-description">
+                        Complete textbook covering advanced mathematical concepts for engineering students.
+                    </p>
+                    <div class="archive-tags">
+                        <span class="archive-tag">Mathematics</span>
+                        <span class="archive-tag">Engineering</span>
+                    </div>
+                    <div class="archive-actions">
+                        <a href="#" class="action-btn btn-primary">
+                            <i class="fas fa-eye"></i> View
+                        </a>
+                        <a href="#" class="action-btn btn-secondary">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                        <span class="download-count">
+                            <i class="fas fa-download"></i> 567
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Hidden Archives -->
+                <div class="archive-card category-papers hidden-archives" data-category="papers">
+                    <div class="archive-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h4 class="archive-title">Climate Change and Environmental Policy</h4>
+                    <div class="archive-meta">
+                        <span><i class="fas fa-calendar"></i> 2023</span>
+                        <span><i class="fas fa-user"></i> Dr. Green</span>
+                    </div>
+                    <p class="archive-description">
+                        Research examining the relationship between climate change and environmental policies.
+                    </p>
+                    <div class="archive-tags">
+                        <span class="archive-tag">Environment</span>
+                        <span class="archive-tag">Policy</span>
+                    </div>
+                    <div class="archive-actions">
+                        <a href="#" class="action-btn btn-primary">
+                            <i class="fas fa-eye"></i> View
+                        </a>
+                        <a href="#" class="action-btn btn-secondary">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                        <span class="download-count">
+                            <i class="fas fa-download"></i> 423
+                        </span>
+                    </div>
+                </div>
+
+                <div class="archive-card category-thesis hidden-archives" data-category="thesis">
+                    <div class="archive-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h4 class="archive-title">Blockchain Technology in Financial Systems</h4>
+                    <div class="archive-meta">
+                        <span><i class="fas fa-calendar"></i> 2022</span>
+                        <span><i class="fas fa-user"></i> Sarah Wilson</span>
+                    </div>
+                    <p class="archive-description">
+                        Master's thesis investigating blockchain integration in modern financial systems.
+                    </p>
+                    <div class="archive-tags">
+                        <span class="archive-tag">Blockchain</span>
+                        <span class="archive-tag">Finance</span>
+                    </div>
+                    <div class="archive-actions">
+                        <a href="#" class="action-btn btn-primary">
+                            <i class="fas fa-eye"></i> View
+                        </a>
+                        <a href="#" class="action-btn btn-secondary">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                        <span class="download-count">
+                            <i class="fas fa-download"></i> 312
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="view-more-btn" id="viewMoreBtn">View More Archives</button>
+        </div>
+    </section>
+
+    <script>
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const archiveCards = document.querySelectorAll('.archive-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const category = btn.getAttribute('data-category');
+
+                archiveCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // View More functionality
+        const viewMoreBtn = document.getElementById('viewMoreBtn');
+        const hiddenArchives = document.querySelectorAll('.hidden-archives');
+
+        viewMoreBtn.addEventListener('click', () => {
+            const currentlyExpanded = hiddenArchives[0].classList.contains('show');
+            
+            hiddenArchives.forEach(archive => {
+                if (currentlyExpanded) {
+                    archive.classList.remove('show');
+                } else {
+                    archive.classList.add('show');
+                }
+            });
+            
+            viewMoreBtn.textContent = currentlyExpanded ? 'View More Archives' : 'View Less';
+        });
+    </script>
+
+    <!--Student Reviews-->>
+
+    <section class="reviews-section">
+      <div class="container-fluid">
+        <h2 class="section-titles fade-in">Students Review</h2>
+
+        <div class="carousel-container">
+          <button class="nav-arrow nav-prev" onclick="prevSlide()">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+
+          <button class="nav-arrow nav-next" onclick="nextSlide()">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+
+          <div class="row" id="reviewCarousel">
+            <div class="col-lg-6 mb-4">
+              <div class="review-card fade-in">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+                  alt="Dipankar Bora"
+                  class="student-photo"
+                />
+                <div class="review-text">
+                  I am Dipankar Bora and I am very much grateful to AJMAL'S IAS
+                  Academy for the excellent supervision, advice and guidance I
+                  have received during my preparation for APSC. I have chosen
+                  sociology and education as my optional at AJMAL'S where with
+                  the usual classes...
+                  <a href="#" class="read-more">Read More</a>
+                </div>
+                <div class="mt-auto">
+                  <div class="student-name">Dipankar Bora</div>
+                  <div class="student-rank">ACS RANK-25, APSC CCE-2018</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+              <div class="review-card fade-in">
+                <img
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+                  alt="Devajyoti Sarma"
+                  class="student-photo"
+                />
+                <div class="review-text">
+                  Hello! I am Devajyoti Sarma. My experience with AJMAL'S IAS
+                  Academy has been really good. Hriday Sir helped me a lot in
+                  getting through the interview. They are well experienced and
+                  they focussed on both the questions that may arise and...
+                  <a href="#" class="read-more">Read More</a>
+                </div>
+                <div class="mt-auto">
+                  <div class="student-name">Devajyoti Sarma</div>
+                  <div class="student-rank">RANK-17, ASSAM FINANCE SERVICE</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional slides (hidden initially) -->
+          <div class="row d-none" id="slide2">
+            <div class="col-lg-6 mb-4">
+              <div class="review-card">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face"
+                  alt="Priyanka Sharma"
+                  class="student-photo"
+                />
+                <div class="review-text">
+                  The guidance and mentorship I received at AJMAL'S IAS Academy
+                  was exceptional. The faculty members are highly knowledgeable
+                  and always available to clear doubts. The study material
+                  provided was comprehensive and up-to-date...
+                  <a href="#" class="read-more">Read More</a>
+                </div>
+                <div class="mt-auto">
+                  <div class="student-name">Priyanka Sharma</div>
+                  <div class="student-rank">RANK-12, APSC CCE-2019</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+              <div class="review-card">
+                <img
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
+                  alt="Rahul Kumar"
+                  class="student-photo"
+                />
+                <div class="review-text">
+                  AJMAL'S IAS Academy provided me with the perfect environment
+                  for UPSC preparation. The regular mock tests and personalized
+                  feedback helped me identify my weak areas and improve
+                  significantly...
+                  <a href="#" class="read-more">Read More</a>
+                </div>
+                <div class="mt-auto">
+                  <div class="student-name">Rahul Kumar</div>
+                  <div class="student-rank">RANK-8, IAS 2020</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      let currentSlide = 0;
+      const totalSlides = 2;
+
+      function showSlide(n) {
+        // Hide all slides
+        document.getElementById("reviewCarousel").classList.add("d-none");
+        document.getElementById("slide2").classList.add("d-none");
+
+        // Show current slide
+        if (n === 0) {
+          document.getElementById("reviewCarousel").classList.remove("d-none");
+        } else if (n === 1) {
+          document.getElementById("slide2").classList.remove("d-none");
+        }
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+      }
+
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        showSlide(currentSlide);
+      }
+
+      // Initialize when page loads
+      document.addEventListener("DOMContentLoaded", function () {
+        // Show first slide initially
+        showSlide(0);
+
+        // Auto-advance slides every 5 seconds
+        setInterval(nextSlide, 5000);
+      });
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <h5>AJMAL'S IAS Academy</h5>
+            <p>
+              Premier IAS coaching institute in Hojai, Assam, dedicated to
+              nurturing future civil servants with excellence and commitment.
+            </p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h5>Quick Links</h5>
+            <ul class="footer-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Courses</a></li>
+              <li><a href="#">Achievers</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5>Courses</h5>
+            <ul class="footer-links">
+              <li><a href="#">UPSC Prelims</a></li>
+              <li><a href="#">UPSC Mains</a></li>
+              <li><a href="#">Interview Guidance</a></li>
+              <li><a href="#">Test Series</a></li>
+              <li><a href="#">Current Affairs</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h5>Contact Info</h5>
+            <ul class="footer-links">
+              <li><i class="fas fa-map-marker-alt me-2"></i>Hojai, Assam</li>
+              <li><i class="fas fa-phone me-2"></i>+91 9876543210</li>
+              <li>
+                <i class="fas fa-envelope me-2"></i>info@ajmaliasacademy.com
+              </li>
+              <li>
+                <i class="fas fa-clock me-2"></i>Mon - Sat: 9:00 AM - 6:00 PM
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="my-4" />
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="mb-0">
+              &copy; 2024 AJMAL'S IAS Academy. All rights reserved.
+            </p>
+          </div>
+          <div class="col-md-6 text-end">
+            <a href="#" class="text-muted me-3">Privacy Policy</a>
+            <a href="#" class="text-muted">Terms & Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
