@@ -1,0 +1,30 @@
+/* sections.css - Page Section Styles */
+
+/* Stats Section */
+.stats-section {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 60px 0;
+  margin-top: 50px;
+}
+
+.stat-item {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: bold;
+  display: block;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+/* Features Section */
+.features-section {
+  padding: 80px 0;
+}

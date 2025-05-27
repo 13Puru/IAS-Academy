@@ -1,0 +1,87 @@
+/* cards.css - Card Components and Related Styles */
+
+/* Achievement Cards */
+.achievement-images {
+  padding: 20px;
+}
+
+.achievement-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-image {
+  margin-bottom: 15px;
+}
+
+.achievement-image i {
+  color: var(--primary-color);
+}
+
+.achievement-text {
+  padding: 20px;
+  text-align: center;
+}
+
+.achievement-text h4 {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.achievement-text p {
+  color: var(--secondary-color);
+  margin: 0;
+}
+
+/* Feature Cards */
+.feature-card {
+  text-align: center;
+  padding: 30px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: white;
+  font-size: 30px;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.feature-description {
+  color: var(--secondary-color);
+  line-height: 1.6;
+}

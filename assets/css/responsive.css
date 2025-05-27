@@ -1,0 +1,55 @@
+/* responsive.css - Media Queries and Responsive Design */
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 991.98px) {
+  body {
+    padding-top: 124px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.8rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-control-prev {
+    left: 15px;
+  }
+
+  .carousel-control-next {
+    right: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    padding-top: 119px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+}
+
+/* Add extra small screens support */
+@media (max-width: 480px) {
+  body {
+    padding-top: 122px;
+  }
+}

@@ -12,478 +12,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/assets/css/topbar_navbar.css" />
-    <link rel="stylesheet" href="/assets/css/courses.css" />
-    <link rel="stylesheet" href="/assets/css/videopart.css" />
-    <link rel="stylesheet" href="/assets/css/acheivers.css" />
-    <link rel="stylesheet" href="/assets/css/reviews.css" />
-    <link rel="stylesheet" href="/assets/css/archives.css" />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
-      :root {
-        --primary-color: #dc3545;
-        --secondary-color: #6c757d;
-        --success-color: #28a745;
-      }
-
-      body {
-        font-family: "Poppins", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        padding-top: 114px;
-      }
-
-      /* Hero Carousel Section */
-      .hero-carousel {
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        min-height: 80vh;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero-carousel::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 50%;
-        height: 100%;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="0,0 100,0 100,100" fill="%23f1f3f4" opacity="0.3"/></svg>');
-        z-index: 1;
-      }
-
-      .carousel-item {
-        min-height: 80vh;
-        display: flex;
-        align-items: center;
-        position: relative;
-        width: 100%;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-
-      .carousel-inner {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-      }
-
-      .carousel-inner .carousel-item {
-        position: relative;
-        display: none;
-        float: left;
-        width: 100%;
-        margin-right: -100%;
-        backface-visibility: hidden;
-        transition: transform 0.6s ease-in-out;
-      }
-
-      .carousel-inner .carousel-item.active {
-        display: flex;
-      }
-
-      .carousel-inner .carousel-item-next,
-      .carousel-inner .carousel-item-prev {
-        display: flex;
-      }
-
-      .carousel-inner .carousel-item-next {
-        transform: translateX(100%);
-      }
-
-      .carousel-inner .carousel-item-prev {
-        transform: translateX(-100%);
-      }
-
-      .carousel-inner .carousel-item-next.carousel-item-start,
-      .carousel-inner .carousel-item-prev.carousel-item-end {
-        transform: translateX(0);
-      }
-
-      .carousel-inner .carousel-item-prev.carousel-item-start,
-      .carousel-inner .carousel-item-next.carousel-item-end {
-        transform: translateX(0);
-      }
-
-      .carousel-item:nth-child(1) {
-        background-image: linear-gradient(
-            rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.3)
-          ),
-          url("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&h=1080&fit=crop");
-      }
-
-      .carousel-item:nth-child(2) {
-        background-image: linear-gradient(
-            rgba(13, 110, 253, 0.6),
-            rgba(13, 110, 253, 0.3)
-          ),
-          url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&h=1080&fit=crop");
-      }
-
-      .carousel-item:nth-child(3) {
-        background-image: linear-gradient(
-            rgba(25, 135, 84, 0.6),
-            rgba(25, 135, 84, 0.3)
-          ),
-          url("https://images.unsplash.com/photo-1577896851231-70ef18881754?w=1920&h=1080&fit=crop");
-      }
-
-      .carousel-inner::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.1);
-        z-index: 1;
-        pointer-events: none;
-      }
-
-      .hero-buttons {
-        animation: slideInLeft 1s ease-out 0.6s both;
-      }
-
-      .achievement-text {
-        padding: 20px;
-        text-align: center;
-      }
-
-      .achievement-text h4 {
-        color: #333;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-
-      .achievement-text p {
-        color: var(--secondary-color);
-        margin: 0;
-      }
-
-      /* Custom Carousel Controls */
-      .carousel-control-prev,
-      .carousel-control-next {
-        width: 50px;
-        height: 50px;
-        background-color: var(--primary-color);
-        border-radius: 50%;
-        top: 50%;
-        transform: translateY(-50%);
-        opacity: 0.8;
-        transition: all 0.3s ease;
-      }
-
-      .carousel-control-prev {
-        left: 30px;
-      }
-
-      .carousel-control-next {
-        right: 30px;
-      }
-
-      .carousel-control-prev:hover,
-      .carousel-control-next:hover {
-        opacity: 1;
-        transform: translateY(-50%) scale(1.1);
-      }
-
-      .carousel-control-prev-icon,
-      .carousel-control-next-icon {
-        width: 20px;
-        height: 20px;
-      }
-
-      /* Custom Carousel Indicators */
-      .carousel-indicators {
-        bottom: 30px;
-      }
-
-      .carousel-indicators [data-bs-target] {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background-color: var(--primary-color);
-        opacity: 0.5;
-        transition: all 0.3s ease;
-      }
-
-      .carousel-indicators .active {
-        opacity: 1;
-        transform: scale(1.2);
-      }
-
-      /* Hero Content Styles */
-      .hero-content {
-        padding: 40px 0;
-        position: relative;
-        z-index: 2;
-      }
-
-      .hero-title {
-        font-size: 4rem;
-        font-weight: 900;
-        color: white;
-        line-height: 1;
-        margin-bottom: 10px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      }
-
-      .hero-subtitle {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: white;
-        margin-bottom: 10px;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-      }
-
-      .hero-description {
-        font-size: 1.3rem;
-        color: white;
-        margin-bottom: 30px;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-      }
-
-      /* Achievement Cards */
-      .achievement-images {
-        padding: 20px;
-      }
-
-      .achievement-card {
-        background: white;
-        border-radius: 15px;
-        padding: 20px;
-        text-align: center;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-        transition: all 0.3s ease;
-        height: 100%;
-      }
-
-      .achievement-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      }
-
-      .achievement-image {
-        margin-bottom: 15px;
-      }
-
-      .achievement-image i {
-        color: var(--primary-color);
-      }
-
-
-      /* Animations */
-      @keyframes slideInLeft {
-        from {
-          opacity: 0;
-          transform: translateX(-50px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      @keyframes slideDown {
-        from {
-          transform: translateY(-100%);
-          opacity: 0;
-        }
-        to {
-          transform: translateY(0);
-          opacity: 1;
-        }
-      }
-
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* Stats Section */
-      .stats-section {
-        background-color: var(--primary-color);
-        color: white;
-        padding: 60px 0;
-        margin-top: 50px;
-      }
-
-      .stat-item {
-        text-align: center;
-        margin-bottom: 30px;
-      }
-
-      .stat-number {
-        font-size: 3rem;
-        font-weight: bold;
-        display: block;
-      }
-
-      .stat-label {
-        font-size: 1.1rem;
-        margin-top: 10px;
-      }
-
-      /* Features Section */
-      .features-section {
-        padding: 80px 0;
-      }
-
-      .feature-card {
-        text-align: center;
-        padding: 30px;
-        background: white;
-        border-radius: 15px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s ease;
-        height: 100%;
-      }
-
-      .feature-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-      }
-
-      .feature-icon {
-        width: 80px;
-        height: 80px;
-        background-color: var(--primary-color);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 20px;
-        color: white;
-        font-size: 30px;
-      }
-
-      .feature-title {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 15px;
-      }
-
-      .feature-description {
-        color: var(--secondary-color);
-        line-height: 1.6;
-      }
-
-      /* Footer */
-      .footer {
-        background-color: #2c3e50;
-        color: white;
-        padding: 50px 0 20px;
-      }
-
-      .footer h5 {
-        color: var(--primary-color);
-        margin-bottom: 20px;
-      }
-
-      .footer-links {
-        list-style: none;
-        padding: 0;
-      }
-
-      .footer-links li {
-        margin-bottom: 10px;
-      }
-
-      .footer-links a {
-        color: #bdc3c7;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-
-      .footer-links a:hover {
-        color: white;
-      }
-
-      .social-icons a {
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-        background-color: var(--primary-color);
-        color: white;
-        text-align: center;
-        line-height: 40px;
-        border-radius: 50%;
-        margin-right: 10px;
-        transition: all 0.3s ease;
-      }
-
-      .social-icons a:hover {
-        background-color: #c82333;
-        transform: translateY(-2px);
-      }
-
-      /* RESPONSIVE DESIGN - FIXED */
-      @media (max-width: 991.98px) {
-        body {
-          padding-top: 124px;
-        }
-
-        .hero-title {
-          font-size: 2.5rem;
-        }
-
-        .hero-subtitle {
-          font-size: 1.8rem;
-        }
-
-        .hero-description {
-          font-size: 1.1rem;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .carousel-control-prev {
-          left: 15px;
-        }
-
-        .carousel-control-next {
-          right: 15px;
-        }
-      }
-
-      @media (max-width: 576px) {
-        body {
-          padding-top: 119px;
-        }
-
-        .hero-title {
-          font-size: 2rem;
-        }
-
-        .hero-subtitle {
-          font-size: 1.5rem;
-        }
-
-        .hero-description {
-          font-size: 1rem;
-        }
-      }
-      /* Add extra small screens support */
-      @media (max-width: 480px) {
-        body {
-          padding-top: 122px;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="/assets/css/main/main.css">
   </head>
   <body>
-    <!-- Top Contact Bar -->
+    Top Contact Bar
     <div class="top-contact-bar fade-in">
       <div class="container">
         <div class="row align-items-center">
@@ -580,8 +112,9 @@
       </div>
     </nav>
 
-    <script>document.addEventListener("DOMContentLoaded", function () {
-  console.log("Navbar script loaded");
+    <script>// Consolidated Navigation Script - Replace all your navbar-related scripts with this
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("Consolidated navbar script loaded");
   
   let lastScrollTop = 0;
 
@@ -602,73 +135,89 @@
     lastScrollTop = scrollTop;
   });
 
-  // Navbar functionality with debug logs
+  // Navbar functionality with improved close function
   const navbarCollapse = document.querySelector("#navbarNav");
   const navbarToggler = document.querySelector(".navbar-toggler");
-
-  console.log("Navbar elements found:", {
-    collapse: !!navbarCollapse,
-    toggler: !!navbarToggler,
-    bootstrap: typeof bootstrap !== "undefined"
-  });
 
   if (!navbarCollapse || !navbarToggler) {
     console.error("Navbar elements not found!");
     return;
   }
 
-  // Function to close navbar with debug
+  // Improved close navbar function
   function closeNavbar() {
     console.log("Attempting to close navbar");
     
     if (navbarCollapse.classList.contains("show")) {
       console.log("Navbar is open, closing...");
       
+      // Try Bootstrap method first
       if (typeof bootstrap !== "undefined" && bootstrap.Collapse) {
-        console.log("Using Bootstrap Collapse API");
-        const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
-        bsCollapse.hide();
+        try {
+          const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+          bsCollapse.hide();
+          console.log("Bootstrap close successful");
+        } catch (error) {
+          console.log("Bootstrap close failed, using manual method");
+          manualCloseNavbar();
+        }
       } else {
-        console.log("Using manual close method");
-        navbarCollapse.classList.remove("show");
-        navbarToggler.setAttribute("aria-expanded", "false");
-        navbarToggler.classList.add("collapsed");
+        manualCloseNavbar();
       }
-    } else {
-      console.log("Navbar is already closed");
     }
   }
 
-  // Get all navigation links
-  const navLinks = document.querySelectorAll(".navbar-nav .nav-link:not(.dropdown-toggle)");
-  const dropdownItems = document.querySelectorAll(".dropdown-item");
+  // Manual close method
+  function manualCloseNavbar() {
+    navbarCollapse.classList.remove("show");
+    navbarCollapse.classList.remove("collapsing");
+    navbarToggler.setAttribute("aria-expanded", "false");
+    navbarToggler.classList.add("collapsed");
+    document.body.classList.remove("navbar-open"); // Remove any body classes
+  }
 
-  console.log("Found nav links:", navLinks.length);
-  console.log("Found dropdown items:", dropdownItems.length);
-
-  // Close navbar when clicking nav links
-  navLinks.forEach(function (navLink, index) {
-    navLink.addEventListener("click", function (e) {
-      console.log(`Nav link ${index} clicked:`, this.getAttribute("href"));
-      const href = this.getAttribute("href");
-      
-      if (href && (href.startsWith("#") || href.startsWith("/") || href.includes(window.location.hostname))) {
-        console.log("Closing navbar after nav link click");
-        setTimeout(closeNavbar, 150);
+  // Handle all navigation clicks in one place
+  function handleNavClick(element, href) {
+    console.log("Navigation click:", href);
+    
+    // Close navbar first
+    setTimeout(closeNavbar, 100);
+    
+    // Handle smooth scrolling for anchor links
+    if (href && href.startsWith("#") && href.length > 1) {
+      const target = document.querySelector(href);
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 200);
+        return false; // Prevent default
       }
-    });
-  });
+    }
+    return true; // Allow default behavior for external links
+  }
 
-  // Close navbar when clicking dropdown items
-  dropdownItems.forEach(function (dropdownItem, index) {
-    dropdownItem.addEventListener("click", function (e) {
-      console.log(`Dropdown item ${index} clicked`);
-      setTimeout(closeNavbar, 150);
-    });
-  });
-
-  // Close navbar when clicking outside
-  document.addEventListener("click", function (e) {
+  // Single event delegation for all nav clicks
+  document.addEventListener("click", function(e) {
+    // Handle navbar close button
+    if (e.target.closest(".navbar-toggler")) {
+      console.log("Navbar toggler clicked");
+      return; // Let Bootstrap handle this
+    }
+    
+    // Handle nav links
+    const navLink = e.target.closest(".navbar-nav .nav-link, .dropdown-item");
+    if (navLink) {
+      const href = navLink.getAttribute("href");
+      if (!handleNavClick(navLink, href) && href.startsWith("#")) {
+        e.preventDefault();
+      }
+      return;
+    }
+    
+    // Handle outside clicks
     const navbar = document.querySelector(".navbar");
     const isOutsideClick = navbar && !navbar.contains(e.target);
     const isNavbarOpen = navbarCollapse.classList.contains("show");
@@ -677,12 +226,6 @@
       console.log("Outside click detected, closing navbar");
       closeNavbar();
     }
-  });
-
-  // Prevent navbar from closing when clicking inside
-  navbarCollapse.addEventListener("click", function (e) {
-    console.log("Click inside navbar, preventing close");
-    e.stopPropagation();
   });
 
   // Handle escape key
@@ -701,24 +244,16 @@
     }
   });
 
-  // Smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      const href = this.getAttribute("href");
-      if (href !== "#" && href.length > 1) {
-        console.log("Smooth scrolling to:", href);
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-          setTimeout(closeNavbar, 100);
-        }
-      }
+  // Monitor Bootstrap events
+  if (navbarCollapse) {
+    navbarCollapse.addEventListener('shown.bs.collapse', function () {
+      console.log('Navbar opened via Bootstrap');
     });
-  });
+    
+    navbarCollapse.addEventListener('hidden.bs.collapse', function () {
+      console.log('Navbar closed via Bootstrap');
+    });
+  }
 });</script>
     <!-- Hero Section -->
     <section class="hero-carousel" id="home">
@@ -1551,7 +1086,7 @@
         </div>
       </div>
     </section>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
       // View More/Less functionality
       let isExpanded = false;
@@ -2087,7 +1622,7 @@
         </button>
       </div>
     </section>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
       // Filter functionality
       const filterBtns = document.querySelectorAll(".filter-btn");
@@ -2243,7 +1778,7 @@
         </div>
       </div>
     </section>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script>
       let currentSlide = 0;
       const totalSlides = 2;

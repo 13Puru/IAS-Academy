@@ -1,0 +1,24 @@
+/* main.css - Master CSS File */
+/* Import all CSS modules in the correct order */
+
+/* 1. Variables and base styles first */
+@import url('../variables.css');
+@import url('../base.css');
+
+/* 2. Components */
+@import url('../topbar_navbar.css');
+@import url('../hero-carousel.css');
+@import url('../carousel-controls.css');
+@import url('../cards.css');
+@import url('../acheivers.css');
+@import url('../archives.css');
+@import url('../reviews.css');
+@import url('../videopart.css');
+@import url('../sections.css');
+@import url('../footer.css');
+
+/* 3. Animations */
+@import url('../animations.css');
+
+/* 4. Responsive styles last */
+@import url('../responsive.css');
