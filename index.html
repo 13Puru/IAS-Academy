@@ -12,6 +12,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/assets/css/topbar_navbar.css" />
     <link rel="stylesheet" href="/assets/css/courses.css" />
     <link rel="stylesheet" href="/assets/css/videopart.css" />
     <link rel="stylesheet" href="/assets/css/acheivers.css" />
@@ -31,291 +32,6 @@
         font-weight: 400;
         font-style: normal;
         padding-top: 114px;
-      }
-
-      /* Top Contact Bar */
-      .top-contact-bar {
-        background-color: var(--primary-color);
-        color: white;
-        padding: 8px 0;
-        font-size: 14px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1030;
-        width: 100%;
-        transform: translateY(-100%);
-        animation: slideDown 0.8s ease-out forwards;
-      }
-
-      .top-contact-bar .contact-item {
-        margin-right: 30px;
-        display: inline-flex;
-        align-items: center;
-      }
-
-      .top-contact-bar .contact-item i {
-        margin-right: 5px;
-      }
-
-      .download-brochure-btn {
-        background-color: #ffc107;
-        color: #000;
-        padding: 5px 15px;
-        border-radius: 20px;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 12px;
-        white-space: nowrap;
-        transition: all 0.3s ease;
-      }
-
-      .download-brochure-btn:hover {
-        background-color: #ffb300;
-        color: #000;
-        text-decoration: none;
-      }
-
-      /* Navigation - FIXED VERSION */
-      .navbar {
-        background-color: white;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        padding: 15px 0;
-        position: fixed;
-        top: 34px; /* Keep this for the contact bar */
-        left: 0;
-        right: 0;
-        z-index: 1020;
-        width: 100%;
-        transition: all 0.3s ease; /* Keep transition for smooth scroll effects */
-        min-height: 80px;
-        display: flex;
-        align-items: center;
-        /* Remove: transform: translateY(-100%); */
-        /* Remove: animation: slideDown 0.8s ease-out 0.3s forwards; */
-      }
-
-      .navbar.navbar-hidden {
-        transform: translateY(-100%);
-      }
-
-      .navbar:hover {
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-      }
-
-      .navbar-brand {
-        display: flex;
-        align-items: center;
-        animation: fadeInUp 1s ease-out 0.6s both;
-        text-decoration: none;
-      }
-
-      .navbar-brand:hover {
-        text-decoration: none;
-      }
-
-      .logo-circle {
-        width: 60px;
-        height: 60px;
-        background-color: var(--primary-color);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 15px;
-        position: relative;
-        transition: all 0.3s ease;
-        overflow: hidden;
-      }
-
-      .logo-circle:hover {
-        transform: rotate(360deg) scale(1.05);
-      }
-
-      .logo-circle img {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        object-fit: cover;
-      }
-
-      .logo-circle i {
-        color: white;
-        font-size: 24px;
-      }
-
-      .academy-name {
-        color: #333;
-      }
-
-      .academy-name h3 {
-        margin: 0;
-        font-size: 20px;
-        font-weight: bold;
-        color: #333;
-      }
-
-      .academy-name p {
-        margin: 0;
-        font-size: 11px;
-        color: var(--secondary-color);
-      }
-
-      .navbar-toggler {
-        border: none;
-        padding: 4px 8px;
-        font-size: 1.25rem;
-        border-radius: 4px;
-        transition: all 0.3s ease;
-      }
-
-      .navbar-toggler:focus {
-        box-shadow: none;
-      }
-
-      .navbar-toggler-icon {
-        background-image: none;
-        position: relative;
-        width: 24px;
-        height: 18px;
-      }
-
-      .navbar-toggler-icon::before,
-      .navbar-toggler-icon::after,
-      .navbar-toggler-icon {
-        background-color: var(--primary-color);
-        transition: all 0.3s ease;
-      }
-
-      .navbar-toggler-icon::before,
-      .navbar-toggler-icon::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 2px;
-      }
-
-      .navbar-toggler-icon::before {
-        top: 0;
-      }
-
-      .navbar-toggler-icon::after {
-        bottom: 0;
-      }
-
-      .navbar-toggler-icon {
-        height: 2px;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-
-      .navbar-collapse {
-        flex-grow: 0;
-      }
-
-      .navbar-nav {
-        align-items: center;
-        gap: 10px;
-      }
-
-      .navbar-nav .nav-link {
-        color: #333 !important;
-        font-size: 14px;
-        font-weight: 600;
-        margin: 0 10px;
-        position: relative;
-        opacity: 0;
-        animation: fadeInUp 0.6s ease-out forwards;
-        animation-delay: calc(0.9s + var(--nav-delay, 0s));
-        transition: all 0.3s ease;
-        padding: 10px 15px !important;
-        border-radius: 25px;
-      }
-
-      .navbar-nav .nav-item:nth-child(1) .nav-link {
-        --nav-delay: 0.1s;
-      }
-      .navbar-nav .nav-item:nth-child(2) .nav-link {
-        --nav-delay: 0.2s;
-      }
-      .navbar-nav .nav-item:nth-child(3) .nav-link {
-        --nav-delay: 0.3s;
-      }
-      .navbar-nav .nav-item:nth-child(4) .nav-link {
-        --nav-delay: 0.4s;
-      }
-      .navbar-nav .nav-item:nth-child(5) .nav-link {
-        --nav-delay: 0.5s;
-      }
-      .navbar-nav .nav-item:nth-child(6) .nav-link {
-        --nav-delay: 0.6s;
-      }
-
-      .navbar-nav .nav-link:hover {
-        color: var(--primary-color) !important;
-        background-color: rgba(220, 53, 69, 0.1);
-      }
-
-      .navbar-nav .nav-link::after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: 5px;
-        left: 50%;
-        background-color: var(--primary-color);
-        transition: all 0.3s ease;
-      }
-
-      .navbar-nav .nav-link:hover::after {
-        width: calc(100% - 30px);
-        left: 15px;
-      }
-
-      .apply-btn {
-        background-color: var(--primary-color);
-        color: white;
-        padding: 10px 10px;
-        border-radius: 25px;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 14px;
-        transition: all 0.3s ease;
-        opacity: 0;
-        animation: fadeInUp 0.6s ease-out 1.5s forwards;
-        position: relative;
-        overflow: hidden;
-        white-space: nowrap;
-      }
-
-      .apply-btn::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.3),
-          transparent
-        );
-        transition: left 0.5s;
-      }
-
-      .apply-btn:hover::before {
-        left: 100%;
-      }
-
-      .apply-btn:hover {
-        background-color: #c82333;
-        color: white;
-        text-decoration: none;
-        transform: translateY(-2px) scale(1.05);
-        box-shadow: 0 5px 15px rgba(220, 53, 69, 0.4);
       }
 
       /* Hero Carousel Section */
@@ -720,36 +436,6 @@
 
       /* RESPONSIVE DESIGN - FIXED */
       @media (max-width: 991.98px) {
-        .navbar {
-          padding: 20px 0;
-          min-height: 90px;
-        }
-
-        .navbar-collapse {
-          margin-top: 15px;
-          background-color: white;
-          border-radius: 10px;
-          padding: 20px;
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .navbar-nav {
-          gap: 5px;
-        }
-
-        .navbar-nav .nav-link {
-          padding: 12px 20px !important;
-          margin: 0 0 5px 0;
-          border-radius: 8px;
-        }
-
-        .apply-btn {
-          margin-top: 15px;
-          display: inline-block;
-          text-align: center;
-          width: 100%;
-        }
-
         body {
           padding-top: 124px;
         }
@@ -768,11 +454,6 @@
       }
 
       @media (max-width: 768px) {
-        .top-contact-bar .contact-item {
-          margin-right: 15px;
-          font-size: 12px;
-        }
-
         .carousel-control-prev {
           left: 15px;
         }
@@ -783,54 +464,6 @@
       }
 
       @media (max-width: 576px) {
-        .top-contact-bar {
-          font-size: 12px;
-          padding: 6px 0;
-        }
-
-        .top-contact-bar .contact-item {
-          margin-right: 10px;
-          margin-bottom: 5px;
-        }
-
-        .navbar {
-          padding: 18px 0;
-          min-height: 85px;
-        }
-
-        .navbar .container {
-          padding: 0 15px;
-        }
-
-        .navbar-brand {
-          padding: 5px 0;
-        }
-
-        .logo-circle {
-          width: 45px;
-          height: 45px;
-          margin-right: 12px;
-        }
-
-        .logo-circle i {
-          font-size: 18px;
-        }
-
-        .academy-name h3 {
-          font-size: 15px;
-          line-height: 1.2;
-        }
-
-        .academy-name p {
-          font-size: 9px;
-          line-height: 1.1;
-        }
-
-        .navbar-toggler {
-          padding: 6px 8px;
-          margin-top: 5px;
-        }
-
         body {
           padding-top: 119px;
         }
@@ -855,81 +488,15 @@
 
       /* Add extra small screens support */
       @media (max-width: 480px) {
-        .navbar {
-          padding: 20px 0;
-          min-height: 88px;
-        }
-
-        .logo-circle {
-          width: 42px;
-          height: 42px;
-          margin-right: 10px;
-        }
-
-        .logo-circle i {
-          font-size: 16px;
-        }
-
-        .academy-name h3 {
-          font-size: 14px;
-        }
-
-        .academy-name p {
-          font-size: 8px;
-        }
-
         body {
           padding-top: 122px;
-        }
-      }
-
-      @media (max-width: 375px) {
-        .navbar {
-          padding: 22px 0;
-          min-height: 90px;
-        }
-
-        .navbar .container {
-          padding: 0 10px;
-        }
-
-        .logo-circle {
-          width: 40px;
-          height: 40px;
-          margin-right: 10px;
-        }
-
-        .logo-circle i {
-          font-size: 15px;
-        }
-
-        .academy-name h3 {
-          font-size: 13px;
-        }
-
-        .academy-name p {
-          font-size: 7px;
-        }
-
-        body {
-          padding-top: 124px;
-        }
-
-        .top-contact-bar .contact-item {
-          margin-right: 8px;
-          font-size: 11px;
-        }
-
-        .download-brochure-btn {
-          font-size: 10px;
-          padding: 3px 10px;
         }
       }
     </style>
   </head>
   <body>
     <!-- Top Contact Bar -->
-    <div class="top-contact-bar">
+    <div class="top-contact-bar fade-in">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-10">
@@ -937,24 +504,16 @@
               <i class="fas fa-map-marker-alt"></i>
               Hojai Branch: (+91) 9876543210
             </span>
-            <!-- <span class="contact-item">
-              <i class="fas fa-phone"></i>
-              Guwahati Branch: (+91) 9876543211
-            </span>
-            <span class="contact-item">
-              <i class="fas fa-phone"></i>
-              Nagaon Branch: (+91) 9876543212
-            </span> -->
           </div>
           <div class="col-md-2 text-end">
-            <a href="#" class="download-brochure-btn"> DOWNLOAD BROCHURE </a>
+            <a href="#" class="download-brochure-btn">DOWNLOAD BROCHURE</a>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg slide-in-left">
       <div class="container">
         <a class="navbar-brand" href="#">
           <div class="logo-circle">
@@ -972,6 +531,9 @@
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -987,6 +549,7 @@
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
+                aria-expanded="false"
               >
                 ABOUT US
               </a>
@@ -1002,20 +565,7 @@
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
-              >
-                ACHIEVERS
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Success Stories</a></li>
-                <li><a class="dropdown-item" href="#">Toppers</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
+                aria-expanded="false"
               >
                 COURSES
               </a>
@@ -1027,117 +577,160 @@
                 </li>
               </ul>
             </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-              >
-                BRANCHES
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Hojai</a></li>
-                <!-- <li><a class="dropdown-item" href="#">Guwahati</a></li>
-                <li><a class="dropdown-item" href="#">Nagaon</a></li> -->
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Achievers</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#blogs">BLOGS</a>
+              <a class="nav-link" href="#contact">Archives</a>
             </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-              >
-                NEWS & MEDIA
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Latest News</a></li>
-                <li><a class="dropdown-item" href="#">Media Coverage</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-              >
-                CONTACT
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Contact Us</a></li>
-                <li><a class="dropdown-item" href="#">Location</a></li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">CONTACT</a>
             </li>
           </ul>
           <a href="#" class="apply-btn">APPLY TODAY</a>
         </div>
       </div>
     </nav>
-    <!--nav script-->
+
     <script>
-      let lastScrollTop = 0;
-        
+      document.addEventListener("DOMContentLoaded", function () {
+        let lastScrollTop = 0;
+
+        // Scroll behavior for navbar
         window.addEventListener("scroll", function () {
-            const navbar = document.querySelector(".navbar");
-            const contactBar = document.querySelector(".top-contact-bar");
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const navbar = document.querySelector(".navbar");
+          const contactBar = document.querySelector(".top-contact-bar");
+          const scrollTop =
+            window.pageYOffset || document.documentElement.scrollTop;
 
-            // Hide/show contact bar and add scrolled class to navbar
-            if (scrollTop > 100) {
-                contactBar.style.transform = "translateY(-100%)";
-                navbar.classList.add("navbar-scrolled");
+          if (scrollTop > 100) {
+            if (contactBar) contactBar.style.transform = "translateY(-100%)";
+            if (navbar) navbar.classList.add("navbar-scrolled");
+          } else {
+            if (contactBar) contactBar.style.transform = "translateY(0)";
+            if (navbar) navbar.classList.remove("navbar-scrolled");
+          }
+
+          lastScrollTop = scrollTop;
+        });
+
+        // Navbar functionality
+        const navbarCollapse = document.querySelector("#navbarNav");
+        const navbarToggler = document.querySelector(".navbar-toggler");
+
+        if (!navbarCollapse || !navbarToggler) {
+          return; // Exit if elements not found
+        }
+
+        // Function to close navbar
+        function closeNavbar() {
+          if (navbarCollapse.classList.contains("show")) {
+            if (typeof bootstrap !== "undefined" && bootstrap.Collapse) {
+              const bsCollapse =
+                bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+              bsCollapse.hide();
             } else {
-                contactBar.style.transform = "translateY(0)";
-                navbar.classList.remove("navbar-scrolled");
+              navbarCollapse.classList.remove("show");
+              navbarToggler.setAttribute("aria-expanded", "false");
+              navbarToggler.classList.add("collapsed");
             }
+          }
+        }
 
-            lastScrollTop = scrollTop;
+        // Get all navigation links
+        const navLinks = document.querySelectorAll(
+          ".navbar-nav .nav-link:not(.dropdown-toggle)"
+        );
+        const dropdownItems = document.querySelectorAll(".dropdown-item");
+        const closeButton = document.querySelector(
+          '.navbar-close, .btn-close, [aria-label="Close"]'
+        );
+
+        // Close navbar when clicking nav links
+        navLinks.forEach(function (navLink) {
+          navLink.addEventListener("click", function (e) {
+            const href = this.getAttribute("href");
+            // Close menu for internal links
+            if (
+              href &&
+              (href.startsWith("#") ||
+                href.startsWith("/") ||
+                href.includes(window.location.hostname))
+            ) {
+              setTimeout(closeNavbar, 150);
+            }
+          });
         });
 
-        // Auto-close mobile menu when clicking on nav links
-        document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.navbar-nav .nav-link:not(.dropdown-toggle)');
-            const navbarCollapse = document.querySelector('.navbar-collapse');
-            const navbarToggler = document.querySelector('.navbar-toggler');
-            
-            navLinks.forEach(function(navLink) {
-                navLink.addEventListener('click', function() {
-                    // Check if we're in mobile view (navbar-collapse is shown)
-                    if (navbarCollapse.classList.contains('show')) {
-                        // Close the mobile menu
-                        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                            toggle: false
-                        });
-                        bsCollapse.hide();
-                        
-                        // Update toggler button state
-                        navbarToggler.classList.add('collapsed');
-                        navbarToggler.setAttribute('aria-expanded', 'false');
-                    }
-                });
-            });
-
-            // Handle dropdown items as well
-            const dropdownItems = document.querySelectorAll('.dropdown-item');
-            dropdownItems.forEach(function(dropdownItem) {
-                dropdownItem.addEventListener('click', function() {
-                    if (navbarCollapse.classList.contains('show')) {
-                        const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
-                            toggle: false
-                        });
-                        bsCollapse.hide();
-                        
-                        navbarToggler.classList.add('collapsed');
-                        navbarToggler.setAttribute('aria-expanded', 'false');
-                    }
-                });
-            });
+        // Close navbar when clicking dropdown items
+        dropdownItems.forEach(function (dropdownItem) {
+          dropdownItem.addEventListener("click", function (e) {
+            setTimeout(closeNavbar, 150);
+          });
         });
+
+        // Handle close button (X)
+        if (closeButton) {
+          closeButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            closeNavbar();
+          });
+        }
+
+        // Close navbar when clicking outside
+        document.addEventListener("click", function (e) {
+          const navbar = document.querySelector(".navbar");
+          if (
+            navbar &&
+            !navbar.contains(e.target) &&
+            navbarCollapse.classList.contains("show")
+          ) {
+            closeNavbar();
+          }
+        });
+
+        // Prevent navbar from closing when clicking inside the menu
+        navbarCollapse.addEventListener("click", function (e) {
+          e.stopPropagation();
+        });
+
+        // Handle escape key
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && navbarCollapse.classList.contains("show")) {
+            closeNavbar();
+          }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            const href = this.getAttribute("href");
+            if (href !== "#" && href.length > 1) {
+              e.preventDefault();
+              const target = document.querySelector(href);
+              if (target) {
+                target.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+                // Close navbar after scrolling starts
+                setTimeout(closeNavbar, 100);
+              }
+            }
+          });
+        });
+
+        // Handle window resize - close menu if screen becomes large
+        window.addEventListener("resize", function () {
+          if (
+            window.innerWidth >= 992 &&
+            navbarCollapse.classList.contains("show")
+          ) {
+            closeNavbar();
+          }
+        });
+      });
     </script>
     <!-- Hero Section -->
     <section class="hero-carousel" id="home">
@@ -2273,250 +1866,286 @@
 
     <!--Archives-->>
     <section class="archives-section">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-title">Archives</h2>
-                <p class="section-description">
-                    Explore our collection of academic papers, research documents, thesis works, and educational resources from our institution.
-                </p>
-            </div>
-
-            <!-- Filter Tabs -->
-            <div class="filter-tabs">
-                <button class="filter-btn active" data-category="all">All Documents</button>
-                <button class="filter-btn" data-category="papers">Research Papers</button>
-                <button class="filter-btn" data-category="thesis">Thesis Works</button>
-                <button class="filter-btn" data-category="reports">Reports</button>
-                <button class="filter-btn" data-category="books">E-Books</button>
-            </div>
-
-            <!-- Archives Grid -->
-            <div class="archives-grid">
-                <!-- Archive Card 1 -->
-                <div class="archive-card category-papers" data-category="papers">
-                    <div class="archive-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <h4 class="archive-title">Impact of Digital Learning on Student Performance</h4>
-                    <div class="archive-meta">
-                        <span><i class="fas fa-calendar"></i> 2023</span>
-                        <span><i class="fas fa-user"></i> Dr. Smith</span>
-                    </div>
-                    <p class="archive-description">
-                        A comprehensive study analyzing the effects of digital learning platforms on academic performance.
-                    </p>
-                    <div class="archive-tags">
-                        <span class="archive-tag">Education</span>
-                        <span class="archive-tag">Technology</span>
-                    </div>
-                    <div class="archive-actions">
-                        <a href="#" class="action-btn btn-primary">
-                            <i class="fas fa-eye"></i> View
-                        </a>
-                        <a href="#" class="action-btn btn-secondary">
-                            <i class="fas fa-download"></i> Download
-                        </a>
-                        <span class="download-count">
-                            <i class="fas fa-download"></i> 342
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Archive Card 2 -->
-                <div class="archive-card category-thesis" data-category="thesis">
-                    <div class="archive-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h4 class="archive-title">Machine Learning Applications in Healthcare</h4>
-                    <div class="archive-meta">
-                        <span><i class="fas fa-calendar"></i> 2023</span>
-                        <span><i class="fas fa-user"></i> John Doe</span>
-                    </div>
-                    <p class="archive-description">
-                        PhD thesis exploring machine learning algorithms in modern healthcare systems.
-                    </p>
-                    <div class="archive-tags">
-                        <span class="archive-tag">AI/ML</span>
-                        <span class="archive-tag">Healthcare</span>
-                    </div>
-                    <div class="archive-actions">
-                        <a href="#" class="action-btn btn-primary">
-                            <i class="fas fa-eye"></i> View
-                        </a>
-                        <a href="#" class="action-btn btn-secondary">
-                            <i class="fas fa-download"></i> Download
-                        </a>
-                        <span class="download-count">
-                            <i class="fas fa-download"></i> 256
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Archive Card 3 -->
-                <div class="archive-card category-reports" data-category="reports">
-                    <div class="archive-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h4 class="archive-title">Annual Academic Performance Report 2023</h4>
-                    <div class="archive-meta">
-                        <span><i class="fas fa-calendar"></i> 2023</span>
-                        <span><i class="fas fa-building"></i> Institution</span>
-                    </div>
-                    <p class="archive-description">
-                        Comprehensive analysis of academic achievements and student performance metrics.
-                    </p>
-                    <div class="archive-tags">
-                        <span class="archive-tag">Analytics</span>
-                        <span class="archive-tag">Performance</span>
-                    </div>
-                    <div class="archive-actions">
-                        <a href="#" class="action-btn btn-primary">
-                            <i class="fas fa-eye"></i> View
-                        </a>
-                        <a href="#" class="action-btn btn-secondary">
-                            <i class="fas fa-download"></i> Download
-                        </a>
-                        <span class="download-count">
-                            <i class="fas fa-download"></i> 189
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Archive Card 4 -->
-                <div class="archive-card category-books" data-category="books">
-                    <div class="archive-icon">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <h4 class="archive-title">Advanced Mathematics for Engineers</h4>
-                    <div class="archive-meta">
-                        <span><i class="fas fa-calendar"></i> 2022</span>
-                        <span><i class="fas fa-user"></i> Prof. Johnson</span>
-                    </div>
-                    <p class="archive-description">
-                        Complete textbook covering advanced mathematical concepts for engineering students.
-                    </p>
-                    <div class="archive-tags">
-                        <span class="archive-tag">Mathematics</span>
-                        <span class="archive-tag">Engineering</span>
-                    </div>
-                    <div class="archive-actions">
-                        <a href="#" class="action-btn btn-primary">
-                            <i class="fas fa-eye"></i> View
-                        </a>
-                        <a href="#" class="action-btn btn-secondary">
-                            <i class="fas fa-download"></i> Download
-                        </a>
-                        <span class="download-count">
-                            <i class="fas fa-download"></i> 567
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Hidden Archives -->
-                <div class="archive-card category-papers hidden-archives" data-category="papers">
-                    <div class="archive-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <h4 class="archive-title">Climate Change and Environmental Policy</h4>
-                    <div class="archive-meta">
-                        <span><i class="fas fa-calendar"></i> 2023</span>
-                        <span><i class="fas fa-user"></i> Dr. Green</span>
-                    </div>
-                    <p class="archive-description">
-                        Research examining the relationship between climate change and environmental policies.
-                    </p>
-                    <div class="archive-tags">
-                        <span class="archive-tag">Environment</span>
-                        <span class="archive-tag">Policy</span>
-                    </div>
-                    <div class="archive-actions">
-                        <a href="#" class="action-btn btn-primary">
-                            <i class="fas fa-eye"></i> View
-                        </a>
-                        <a href="#" class="action-btn btn-secondary">
-                            <i class="fas fa-download"></i> Download
-                        </a>
-                        <span class="download-count">
-                            <i class="fas fa-download"></i> 423
-                        </span>
-                    </div>
-                </div>
-
-                <div class="archive-card category-thesis hidden-archives" data-category="thesis">
-                    <div class="archive-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h4 class="archive-title">Blockchain Technology in Financial Systems</h4>
-                    <div class="archive-meta">
-                        <span><i class="fas fa-calendar"></i> 2022</span>
-                        <span><i class="fas fa-user"></i> Sarah Wilson</span>
-                    </div>
-                    <p class="archive-description">
-                        Master's thesis investigating blockchain integration in modern financial systems.
-                    </p>
-                    <div class="archive-tags">
-                        <span class="archive-tag">Blockchain</span>
-                        <span class="archive-tag">Finance</span>
-                    </div>
-                    <div class="archive-actions">
-                        <a href="#" class="action-btn btn-primary">
-                            <i class="fas fa-eye"></i> View
-                        </a>
-                        <a href="#" class="action-btn btn-secondary">
-                            <i class="fas fa-download"></i> Download
-                        </a>
-                        <span class="download-count">
-                            <i class="fas fa-download"></i> 312
-                        </span>
-                    </div>
-                </div>
-            </div>
-
-            <button class="view-more-btn" id="viewMoreBtn">View More Archives</button>
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-title">Archives</h2>
+          <p class="section-description">
+            Explore our collection of academic papers, research documents,
+            thesis works, and educational resources from our institution.
+          </p>
         </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-category="all">
+            All Documents
+          </button>
+          <button class="filter-btn" data-category="papers">
+            Research Papers
+          </button>
+          <button class="filter-btn" data-category="thesis">
+            Thesis Works
+          </button>
+          <button class="filter-btn" data-category="reports">Reports</button>
+          <button class="filter-btn" data-category="books">E-Books</button>
+        </div>
+
+        <!-- Archives Grid -->
+        <div class="archives-grid">
+          <!-- Archive Card 1 -->
+          <div class="archive-card category-papers" data-category="papers">
+            <div class="archive-icon">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <h4 class="archive-title">
+              Impact of Digital Learning on Student Performance
+            </h4>
+            <div class="archive-meta">
+              <span><i class="fas fa-calendar"></i> 2023</span>
+              <span><i class="fas fa-user"></i> Dr. Smith</span>
+            </div>
+            <p class="archive-description">
+              A comprehensive study analyzing the effects of digital learning
+              platforms on academic performance.
+            </p>
+            <div class="archive-tags">
+              <span class="archive-tag">Education</span>
+              <span class="archive-tag">Technology</span>
+            </div>
+            <div class="archive-actions">
+              <a href="#" class="action-btn btn-primary">
+                <i class="fas fa-eye"></i> View
+              </a>
+              <a href="#" class="action-btn btn-secondary">
+                <i class="fas fa-download"></i> Download
+              </a>
+              <span class="download-count">
+                <i class="fas fa-download"></i> 342
+              </span>
+            </div>
+          </div>
+
+          <!-- Archive Card 2 -->
+          <div class="archive-card category-thesis" data-category="thesis">
+            <div class="archive-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h4 class="archive-title">
+              Machine Learning Applications in Healthcare
+            </h4>
+            <div class="archive-meta">
+              <span><i class="fas fa-calendar"></i> 2023</span>
+              <span><i class="fas fa-user"></i> John Doe</span>
+            </div>
+            <p class="archive-description">
+              PhD thesis exploring machine learning algorithms in modern
+              healthcare systems.
+            </p>
+            <div class="archive-tags">
+              <span class="archive-tag">AI/ML</span>
+              <span class="archive-tag">Healthcare</span>
+            </div>
+            <div class="archive-actions">
+              <a href="#" class="action-btn btn-primary">
+                <i class="fas fa-eye"></i> View
+              </a>
+              <a href="#" class="action-btn btn-secondary">
+                <i class="fas fa-download"></i> Download
+              </a>
+              <span class="download-count">
+                <i class="fas fa-download"></i> 256
+              </span>
+            </div>
+          </div>
+
+          <!-- Archive Card 3 -->
+          <div class="archive-card category-reports" data-category="reports">
+            <div class="archive-icon">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <h4 class="archive-title">
+              Annual Academic Performance Report 2023
+            </h4>
+            <div class="archive-meta">
+              <span><i class="fas fa-calendar"></i> 2023</span>
+              <span><i class="fas fa-building"></i> Institution</span>
+            </div>
+            <p class="archive-description">
+              Comprehensive analysis of academic achievements and student
+              performance metrics.
+            </p>
+            <div class="archive-tags">
+              <span class="archive-tag">Analytics</span>
+              <span class="archive-tag">Performance</span>
+            </div>
+            <div class="archive-actions">
+              <a href="#" class="action-btn btn-primary">
+                <i class="fas fa-eye"></i> View
+              </a>
+              <a href="#" class="action-btn btn-secondary">
+                <i class="fas fa-download"></i> Download
+              </a>
+              <span class="download-count">
+                <i class="fas fa-download"></i> 189
+              </span>
+            </div>
+          </div>
+
+          <!-- Archive Card 4 -->
+          <div class="archive-card category-books" data-category="books">
+            <div class="archive-icon">
+              <i class="fas fa-book"></i>
+            </div>
+            <h4 class="archive-title">Advanced Mathematics for Engineers</h4>
+            <div class="archive-meta">
+              <span><i class="fas fa-calendar"></i> 2022</span>
+              <span><i class="fas fa-user"></i> Prof. Johnson</span>
+            </div>
+            <p class="archive-description">
+              Complete textbook covering advanced mathematical concepts for
+              engineering students.
+            </p>
+            <div class="archive-tags">
+              <span class="archive-tag">Mathematics</span>
+              <span class="archive-tag">Engineering</span>
+            </div>
+            <div class="archive-actions">
+              <a href="#" class="action-btn btn-primary">
+                <i class="fas fa-eye"></i> View
+              </a>
+              <a href="#" class="action-btn btn-secondary">
+                <i class="fas fa-download"></i> Download
+              </a>
+              <span class="download-count">
+                <i class="fas fa-download"></i> 567
+              </span>
+            </div>
+          </div>
+
+          <!-- Hidden Archives -->
+          <div
+            class="archive-card category-papers hidden-archives"
+            data-category="papers"
+          >
+            <div class="archive-icon">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <h4 class="archive-title">
+              Climate Change and Environmental Policy
+            </h4>
+            <div class="archive-meta">
+              <span><i class="fas fa-calendar"></i> 2023</span>
+              <span><i class="fas fa-user"></i> Dr. Green</span>
+            </div>
+            <p class="archive-description">
+              Research examining the relationship between climate change and
+              environmental policies.
+            </p>
+            <div class="archive-tags">
+              <span class="archive-tag">Environment</span>
+              <span class="archive-tag">Policy</span>
+            </div>
+            <div class="archive-actions">
+              <a href="#" class="action-btn btn-primary">
+                <i class="fas fa-eye"></i> View
+              </a>
+              <a href="#" class="action-btn btn-secondary">
+                <i class="fas fa-download"></i> Download
+              </a>
+              <span class="download-count">
+                <i class="fas fa-download"></i> 423
+              </span>
+            </div>
+          </div>
+
+          <div
+            class="archive-card category-thesis hidden-archives"
+            data-category="thesis"
+          >
+            <div class="archive-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h4 class="archive-title">
+              Blockchain Technology in Financial Systems
+            </h4>
+            <div class="archive-meta">
+              <span><i class="fas fa-calendar"></i> 2022</span>
+              <span><i class="fas fa-user"></i> Sarah Wilson</span>
+            </div>
+            <p class="archive-description">
+              Master's thesis investigating blockchain integration in modern
+              financial systems.
+            </p>
+            <div class="archive-tags">
+              <span class="archive-tag">Blockchain</span>
+              <span class="archive-tag">Finance</span>
+            </div>
+            <div class="archive-actions">
+              <a href="#" class="action-btn btn-primary">
+                <i class="fas fa-eye"></i> View
+              </a>
+              <a href="#" class="action-btn btn-secondary">
+                <i class="fas fa-download"></i> Download
+              </a>
+              <span class="download-count">
+                <i class="fas fa-download"></i> 312
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <button class="view-more-btn" id="viewMoreBtn">
+          View More Archives
+        </button>
+      </div>
     </section>
 
     <script>
-        // Filter functionality
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const archiveCards = document.querySelectorAll('.archive-card');
+      // Filter functionality
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const archiveCards = document.querySelectorAll(".archive-card");
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Remove active class from all buttons
+          filterBtns.forEach((b) => b.classList.remove("active"));
+          // Add active class to clicked button
+          btn.classList.add("active");
 
-                const category = btn.getAttribute('data-category');
+          const category = btn.getAttribute("data-category");
 
-                archiveCards.forEach(card => {
-                    if (category === 'all' || card.getAttribute('data-category') === category) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
+          archiveCards.forEach((card) => {
+            if (
+              category === "all" ||
+              card.getAttribute("data-category") === category
+            ) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // View More functionality
+      const viewMoreBtn = document.getElementById("viewMoreBtn");
+      const hiddenArchives = document.querySelectorAll(".hidden-archives");
+
+      viewMoreBtn.addEventListener("click", () => {
+        const currentlyExpanded = hiddenArchives[0].classList.contains("show");
+
+        hiddenArchives.forEach((archive) => {
+          if (currentlyExpanded) {
+            archive.classList.remove("show");
+          } else {
+            archive.classList.add("show");
+          }
         });
 
-        // View More functionality
-        const viewMoreBtn = document.getElementById('viewMoreBtn');
-        const hiddenArchives = document.querySelectorAll('.hidden-archives');
-
-        viewMoreBtn.addEventListener('click', () => {
-            const currentlyExpanded = hiddenArchives[0].classList.contains('show');
-            
-            hiddenArchives.forEach(archive => {
-                if (currentlyExpanded) {
-                    archive.classList.remove('show');
-                } else {
-                    archive.classList.add('show');
-                }
-            });
-            
-            viewMoreBtn.textContent = currentlyExpanded ? 'View More Archives' : 'View Less';
-        });
+        viewMoreBtn.textContent = currentlyExpanded
+          ? "View More Archives"
+          : "View Less";
+      });
     </script>
 
     <!--Student Reviews-->>
