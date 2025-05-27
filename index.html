@@ -275,12 +275,6 @@
         color: var(--primary-color);
       }
 
-      .navbar.navbar-scrolled {
-        top: 0; /* Move to top when scrolled past contact bar */
-        background-color: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-      }
 
       /* Animations */
       @keyframes slideInLeft {
@@ -479,13 +473,7 @@
         .hero-description {
           font-size: 1rem;
         }
-
-        .download-brochure-btn {
-          font-size: 11px;
-          padding: 4px 12px;
-        }
       }
-
       /* Add extra small screens support */
       @media (max-width: 480px) {
         body {
@@ -592,146 +580,146 @@
       </div>
     </nav>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        let lastScrollTop = 0;
+    <script>document.addEventListener("DOMContentLoaded", function () {
+  console.log("Navbar script loaded");
+  
+  let lastScrollTop = 0;
 
-        // Scroll behavior for navbar
-        window.addEventListener("scroll", function () {
-          const navbar = document.querySelector(".navbar");
-          const contactBar = document.querySelector(".top-contact-bar");
-          const scrollTop =
-            window.pageYOffset || document.documentElement.scrollTop;
+  // Scroll behavior for navbar
+  window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    const contactBar = document.querySelector(".top-contact-bar");
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-          if (scrollTop > 100) {
-            if (contactBar) contactBar.style.transform = "translateY(-100%)";
-            if (navbar) navbar.classList.add("navbar-scrolled");
-          } else {
-            if (contactBar) contactBar.style.transform = "translateY(0)";
-            if (navbar) navbar.classList.remove("navbar-scrolled");
-          }
+    if (scrollTop > 100) {
+      if (contactBar) contactBar.style.transform = "translateY(-100%)";
+      if (navbar) navbar.classList.add("navbar-scrolled");
+    } else {
+      if (contactBar) contactBar.style.transform = "translateY(0)";
+      if (navbar) navbar.classList.remove("navbar-scrolled");
+    }
 
-          lastScrollTop = scrollTop;
-        });
+    lastScrollTop = scrollTop;
+  });
 
-        // Navbar functionality
-        const navbarCollapse = document.querySelector("#navbarNav");
-        const navbarToggler = document.querySelector(".navbar-toggler");
+  // Navbar functionality with debug logs
+  const navbarCollapse = document.querySelector("#navbarNav");
+  const navbarToggler = document.querySelector(".navbar-toggler");
 
-        if (!navbarCollapse || !navbarToggler) {
-          return; // Exit if elements not found
+  console.log("Navbar elements found:", {
+    collapse: !!navbarCollapse,
+    toggler: !!navbarToggler,
+    bootstrap: typeof bootstrap !== "undefined"
+  });
+
+  if (!navbarCollapse || !navbarToggler) {
+    console.error("Navbar elements not found!");
+    return;
+  }
+
+  // Function to close navbar with debug
+  function closeNavbar() {
+    console.log("Attempting to close navbar");
+    
+    if (navbarCollapse.classList.contains("show")) {
+      console.log("Navbar is open, closing...");
+      
+      if (typeof bootstrap !== "undefined" && bootstrap.Collapse) {
+        console.log("Using Bootstrap Collapse API");
+        const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+        bsCollapse.hide();
+      } else {
+        console.log("Using manual close method");
+        navbarCollapse.classList.remove("show");
+        navbarToggler.setAttribute("aria-expanded", "false");
+        navbarToggler.classList.add("collapsed");
+      }
+    } else {
+      console.log("Navbar is already closed");
+    }
+  }
+
+  // Get all navigation links
+  const navLinks = document.querySelectorAll(".navbar-nav .nav-link:not(.dropdown-toggle)");
+  const dropdownItems = document.querySelectorAll(".dropdown-item");
+
+  console.log("Found nav links:", navLinks.length);
+  console.log("Found dropdown items:", dropdownItems.length);
+
+  // Close navbar when clicking nav links
+  navLinks.forEach(function (navLink, index) {
+    navLink.addEventListener("click", function (e) {
+      console.log(`Nav link ${index} clicked:`, this.getAttribute("href"));
+      const href = this.getAttribute("href");
+      
+      if (href && (href.startsWith("#") || href.startsWith("/") || href.includes(window.location.hostname))) {
+        console.log("Closing navbar after nav link click");
+        setTimeout(closeNavbar, 150);
+      }
+    });
+  });
+
+  // Close navbar when clicking dropdown items
+  dropdownItems.forEach(function (dropdownItem, index) {
+    dropdownItem.addEventListener("click", function (e) {
+      console.log(`Dropdown item ${index} clicked`);
+      setTimeout(closeNavbar, 150);
+    });
+  });
+
+  // Close navbar when clicking outside
+  document.addEventListener("click", function (e) {
+    const navbar = document.querySelector(".navbar");
+    const isOutsideClick = navbar && !navbar.contains(e.target);
+    const isNavbarOpen = navbarCollapse.classList.contains("show");
+    
+    if (isOutsideClick && isNavbarOpen) {
+      console.log("Outside click detected, closing navbar");
+      closeNavbar();
+    }
+  });
+
+  // Prevent navbar from closing when clicking inside
+  navbarCollapse.addEventListener("click", function (e) {
+    console.log("Click inside navbar, preventing close");
+    e.stopPropagation();
+  });
+
+  // Handle escape key
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && navbarCollapse.classList.contains("show")) {
+      console.log("Escape key pressed, closing navbar");
+      closeNavbar();
+    }
+  });
+
+  // Handle window resize
+  window.addEventListener("resize", function () {
+    if (window.innerWidth >= 992 && navbarCollapse.classList.contains("show")) {
+      console.log("Screen resized to desktop, closing mobile menu");
+      closeNavbar();
+    }
+  });
+
+  // Smooth scrolling for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+      if (href !== "#" && href.length > 1) {
+        console.log("Smooth scrolling to:", href);
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+          setTimeout(closeNavbar, 100);
         }
-
-        // Function to close navbar
-        function closeNavbar() {
-          if (navbarCollapse.classList.contains("show")) {
-            if (typeof bootstrap !== "undefined" && bootstrap.Collapse) {
-              const bsCollapse =
-                bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
-              bsCollapse.hide();
-            } else {
-              navbarCollapse.classList.remove("show");
-              navbarToggler.setAttribute("aria-expanded", "false");
-              navbarToggler.classList.add("collapsed");
-            }
-          }
-        }
-
-        // Get all navigation links
-        const navLinks = document.querySelectorAll(
-          ".navbar-nav .nav-link:not(.dropdown-toggle)"
-        );
-        const dropdownItems = document.querySelectorAll(".dropdown-item");
-        const closeButton = document.querySelector(
-          '.navbar-close, .btn-close, [aria-label="Close"]'
-        );
-
-        // Close navbar when clicking nav links
-        navLinks.forEach(function (navLink) {
-          navLink.addEventListener("click", function (e) {
-            const href = this.getAttribute("href");
-            // Close menu for internal links
-            if (
-              href &&
-              (href.startsWith("#") ||
-                href.startsWith("/") ||
-                href.includes(window.location.hostname))
-            ) {
-              setTimeout(closeNavbar, 150);
-            }
-          });
-        });
-
-        // Close navbar when clicking dropdown items
-        dropdownItems.forEach(function (dropdownItem) {
-          dropdownItem.addEventListener("click", function (e) {
-            setTimeout(closeNavbar, 150);
-          });
-        });
-
-        // Handle close button (X)
-        if (closeButton) {
-          closeButton.addEventListener("click", function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            closeNavbar();
-          });
-        }
-
-        // Close navbar when clicking outside
-        document.addEventListener("click", function (e) {
-          const navbar = document.querySelector(".navbar");
-          if (
-            navbar &&
-            !navbar.contains(e.target) &&
-            navbarCollapse.classList.contains("show")
-          ) {
-            closeNavbar();
-          }
-        });
-
-        // Prevent navbar from closing when clicking inside the menu
-        navbarCollapse.addEventListener("click", function (e) {
-          e.stopPropagation();
-        });
-
-        // Handle escape key
-        document.addEventListener("keydown", function (e) {
-          if (e.key === "Escape" && navbarCollapse.classList.contains("show")) {
-            closeNavbar();
-          }
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-          anchor.addEventListener("click", function (e) {
-            const href = this.getAttribute("href");
-            if (href !== "#" && href.length > 1) {
-              e.preventDefault();
-              const target = document.querySelector(href);
-              if (target) {
-                target.scrollIntoView({
-                  behavior: "smooth",
-                  block: "start",
-                });
-                // Close navbar after scrolling starts
-                setTimeout(closeNavbar, 100);
-              }
-            }
-          });
-        });
-
-        // Handle window resize - close menu if screen becomes large
-        window.addEventListener("resize", function () {
-          if (
-            window.innerWidth >= 992 &&
-            navbarCollapse.classList.contains("show")
-          ) {
-            closeNavbar();
-          }
-        });
-      });
-    </script>
+      }
+    });
+  });
+});</script>
     <!-- Hero Section -->
     <section class="hero-carousel" id="home">
       <div
