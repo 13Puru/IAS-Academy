@@ -481,108 +481,7 @@
       </div>
     </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <!-- <script>
-      // Add smooth scrolling and interactive effects
-      document.addEventListener("DOMContentLoaded", function () {
-        // Animate elements on scroll
-        const observerOptions = {
-          threshold: 0.1,
-          rootMargin: "0px 0px -50px 0px",
-        };
-
-        const observer = new IntersectionObserver(function (entries) {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.style.opacity = "1";
-              entry.target.style.transform = "translateY(0)";
-            }
-          });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document
-          .querySelectorAll(
-            ".section-title, .description-text, .video-container"
-          )
-          .forEach((el) => {
-            el.style.opacity = "0";
-            el.style.transform = "translateY(30px)";
-            el.style.transition = "all 0.8s ease";
-            observer.observe(el);
-          });
-
-        // Add click effect to button
-        const knowMoreBtn = document.querySelector(".know-more-btn");
-        if (knowMoreBtn) {
-          knowMoreBtn.addEventListener("click", function (e) {
-            e.preventDefault();
-            this.style.transform = "scale(0.95)";
-            setTimeout(() => {
-              this.style.transform = "translateY(-2px) scale(1)";
-            }, 150);
-          });
-        }
-
-        // Add click analytics for inline social links
-        document.querySelectorAll(".social-link-inline").forEach((link) => {
-          link.addEventListener("click", function () {
-            const platform = this.textContent.trim();
-            console.log(`Social link clicked: ${platform}`);
-          });
-        });
-
-        // Add ripple effect to inline social links
-        document.querySelectorAll(".social-link-inline").forEach((link) => {
-          link.addEventListener("click", function (e) {
-            const ripple = document.createElement("span");
-            const rect = this.getBoundingClientRect();
-            const size = Math.max(rect.width, rect.height);
-            const x = e.clientX - rect.left - size / 2;
-            const y = e.clientY - rect.top - size / 2;
-
-            ripple.style.cssText = `
-                        position: absolute;
-                        width: ${size}px;
-                        height: ${size}px;
-                        left: ${x}px;
-                        top: ${y}px;
-                        background: rgba(255,255,255,0.3);
-                        border-radius: 50%;
-                        transform: scale(0);
-                        animation: ripple 0.6s linear;
-                        pointer-events: none;
-                    `;
-
-            this.style.position = "relative";
-            this.style.overflow = "hidden";
-            this.appendChild(ripple);
-
-            setTimeout(() => {
-              ripple.remove();
-            }, 600);
-          });
-        });
-      });
-
-      // Video play functionality
-      function playVideo() {
-        window.open("https://www.youtube.com/watch?v=QrvqoahVrDU", "_blank");
-      }
-
-      // Add CSS for ripple animation
-      const style = document.createElement("style");
-      style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
-      document.head.appendChild(style);
-    </script> -->
-
+    
     <!--Courses Section-->
     <div class="container-fluid">
       <div class="container">
@@ -949,184 +848,7 @@
         </div>
       </div>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <!-- <script>
-      // View More/Less functionality
-      let isExpanded = false;
-
-      function toggleAchievers() {
-        const hiddenAchievers = document.querySelectorAll(".hidden-achievers");
-        const viewMoreBtn = document.getElementById("viewMoreBtn");
-
-        if (!isExpanded) {
-          hiddenAchievers.forEach((achiever) => {
-            achiever.style.display = "block";
-          });
-          viewMoreBtn.textContent = "View Less";
-          isExpanded = true;
-        } else {
-          hiddenAchievers.forEach((achiever) => {
-            achiever.style.display = "none";
-          });
-          viewMoreBtn.textContent = "View More Achievers";
-          isExpanded = false;
-        }
-      }
-
-      // Mobile Carousel functionality
-      document.addEventListener("DOMContentLoaded", function () {
-        let currentSlide = 0;
-        let autoPlayInterval;
-
-        const slides = document.querySelectorAll(".mobile-carousel-slide");
-        const totalSlides = slides.length;
-        const track = document.getElementById("carouselTrack");
-        const prevBtn = document.getElementById("prevBtn");
-        const nextBtn = document.getElementById("nextBtn");
-        const indicatorsContainer =
-          document.getElementById("carouselIndicators");
-
-        // Only initialize carousel if elements exist (mobile view)
-        if (!track || !slides.length) return;
-
-        // Create indicators
-        for (let i = 0; i < totalSlides; i++) {
-          const dot = document.createElement("div");
-          dot.className = "carousel-dot";
-          if (i === 0) dot.classList.add("active");
-          dot.addEventListener("click", () => goToSlide(i));
-          indicatorsContainer.appendChild(dot);
-        }
-
-        const indicators = document.querySelectorAll(".carousel-dot");
-
-        function updateCarousel() {
-          if (!slides.length) return;
-
-          const slideWidth = slides[0].offsetWidth;
-          track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-
-          // Update indicators
-          indicators.forEach((dot, index) => {
-            dot.classList.toggle("active", index === currentSlide);
-          });
-        }
-
-        function goToSlide(slideIndex) {
-          currentSlide = slideIndex;
-          updateCarousel();
-          resetAutoPlay();
-        }
-
-        function nextSlide() {
-          currentSlide++;
-          if (currentSlide >= totalSlides) {
-            currentSlide = 0;
-          }
-          updateCarousel();
-        }
-
-        function prevSlide() {
-          currentSlide--;
-          if (currentSlide < 0) {
-            currentSlide = totalSlides - 1;
-          }
-          updateCarousel();
-        }
-
-        function startAutoPlay() {
-          autoPlayInterval = setInterval(() => {
-            nextSlide();
-          }, 4000);
-        }
-
-        function stopAutoPlay() {
-          if (autoPlayInterval) {
-            clearInterval(autoPlayInterval);
-          }
-        }
-
-        function resetAutoPlay() {
-          stopAutoPlay();
-          startAutoPlay();
-        }
-
-        // Event listeners
-        if (nextBtn) {
-          nextBtn.addEventListener("click", () => {
-            nextSlide();
-            resetAutoPlay();
-          });
-        }
-
-        if (prevBtn) {
-          prevBtn.addEventListener("click", () => {
-            prevSlide();
-            resetAutoPlay();
-          });
-        }
-
-        // Touch/swipe support for mobile
-        let startX = 0;
-        let isDragging = false;
-
-        track.addEventListener(
-          "touchstart",
-          (e) => {
-            startX = e.touches[0].clientX;
-            isDragging = true;
-            stopAutoPlay();
-          },
-          { passive: true }
-        );
-
-        track.addEventListener(
-          "touchmove",
-          (e) => {
-            if (!isDragging) return;
-            e.preventDefault();
-          },
-          { passive: false }
-        );
-
-        track.addEventListener(
-          "touchend",
-          (e) => {
-            if (!isDragging) return;
-
-            const endX = e.changedTouches[0].clientX;
-            const diffX = startX - endX;
-
-            // Minimum swipe distance
-            if (Math.abs(diffX) > 50) {
-              if (diffX > 0) {
-                nextSlide();
-              } else {
-                prevSlide();
-              }
-            }
-
-            isDragging = false;
-            startAutoPlay();
-          },
-          { passive: true }
-        );
-
-        // Pause auto-play when user hovers over carousel (desktop)
-        track.addEventListener("mouseenter", stopAutoPlay);
-        track.addEventListener("mouseleave", startAutoPlay);
-
-        // Handle window resize
-        window.addEventListener("resize", () => {
-          updateCarousel();
-        });
-
-        // Initialize carousel
-        updateCarousel();
-        startAutoPlay();
-      });
-    </script> -->
-
+    
     <!-- Stats Section -->
     <section class="stats-section">
       <div class="container">
@@ -1485,55 +1207,7 @@
         </button>
       </div>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <!-- <script>
-      // Filter functionality
-      const filterBtns = document.querySelectorAll(".filter-btn");
-      const archiveCards = document.querySelectorAll(".archive-card");
-
-      filterBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          // Remove active class from all buttons
-          filterBtns.forEach((b) => b.classList.remove("active"));
-          // Add active class to clicked button
-          btn.classList.add("active");
-
-          const category = btn.getAttribute("data-category");
-
-          archiveCards.forEach((card) => {
-            if (
-              category === "all" ||
-              card.getAttribute("data-category") === category
-            ) {
-              card.style.display = "block";
-            } else {
-              card.style.display = "none";
-            }
-          });
-        });
-      });
-
-      // View More functionality
-      const viewMoreBtn = document.getElementById("viewMoreBtn");
-      const hiddenArchives = document.querySelectorAll(".hidden-archives");
-
-      viewMoreBtn.addEventListener("click", () => {
-        const currentlyExpanded = hiddenArchives[0].classList.contains("show");
-
-        hiddenArchives.forEach((archive) => {
-          if (currentlyExpanded) {
-            archive.classList.remove("show");
-          } else {
-            archive.classList.add("show");
-          }
-        });
-
-        viewMoreBtn.textContent = currentlyExpanded
-          ? "View More Archives"
-          : "View Less";
-      });
-    </script> -->
-
+    
     <!--Student Reviews-->>
 
     <section class="reviews-section">
@@ -1641,44 +1315,8 @@
         </div>
       </div>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <!-- <script>
-      let currentSlide = 0;
-      const totalSlides = 2;
-
-      function showSlide(n) {
-        // Hide all slides
-        document.getElementById("reviewCarousel").classList.add("d-none");
-        document.getElementById("slide2").classList.add("d-none");
-
-        // Show current slide
-        if (n === 0) {
-          document.getElementById("reviewCarousel").classList.remove("d-none");
-        } else if (n === 1) {
-          document.getElementById("slide2").classList.remove("d-none");
-        }
-      }
-
-      function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        showSlide(currentSlide);
-      }
-
-      function prevSlide() {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        showSlide(currentSlide);
-      }
-
-      // Initialize when page loads
-      document.addEventListener("DOMContentLoaded", function () {
-        // Show first slide initially
-        showSlide(0);
-
-        // Auto-advance slides every 5 seconds
-        setInterval(nextSlide, 5000);
-      });
-    </script> -->
-
+    
+    
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
@@ -1744,6 +1382,7 @@
         </div>
       </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/js/script.js"></script>
   </body>
 </html>
